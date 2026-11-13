@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import ShopToolbar from "../../Components/ShopToolbar/ShopToolbar";
 import BlogCard from "../../Components/Blog/BlogCard";

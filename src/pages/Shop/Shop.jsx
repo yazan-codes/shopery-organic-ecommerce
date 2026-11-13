@@ -71,7 +71,7 @@ const filtersProducts = products.filter((prod) => {
               id="shop-filters-panel"
               className={`shop-filters-panel offcanvas-lg offcanvas-start${
                 isFiltersOpen ? " show" : ""
-              }`}
+              }`} 
               // tabIndex="-1"
               // role={isFiltersOpen ? "dialog" : undefined}
               // aria-modal={isFiltersOpen ? "true" : undefined}
@@ -82,7 +82,7 @@ const filtersProducts = products.filter((prod) => {
                   id="shop-filters-panel-title"
                   className="shop-filters-panel__title"
                 >
-                  Filters
+                  Filters 
                 </h2>
                 <button
                   className="btn-close"

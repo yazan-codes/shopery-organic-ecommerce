@@ -185,6 +185,98 @@
   height: 24px;
 }
 
+/* Account presentation uses the existing user; no authentication actions here. */
+.navbar-two__sign-in,
+.navbar-two__account-trigger {
+  min-height: var(--button-height-sm);
+  color: var(--color-text-strong);
+  font-size: var(--font-size-sm);
+}
+
+.navbar-two__account-trigger {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary-light);
+  cursor: pointer;
+  list-style: none;
+}
+
+.navbar-two__account-trigger::-webkit-details-marker { display: none; }
+
+.navbar-two__account-icon {
+  width: var(--space-6);
+  height: var(--space-6);
+  flex-shrink: 0;
+}
+
+.navbar-two__account-name {
+  max-width: calc(var(--space-25) + var(--space-12));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navbar-two__account-chevron {
+  width: var(--space-4);
+  height: var(--space-4);
+  flex-shrink: 0;
+}
+
+.navbar-two__account[open] .navbar-two__account-chevron { transform: rotate(180deg); }
+
+.navbar-two__account-menu {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  z-index: 1000;
+  width: calc(var(--space-25) + var(--space-20));
+  padding: var(--space-2);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-page);
+  box-shadow: var(--shadow-lg);
+}
+
+.navbar-two__account-item {
+  min-height: var(--button-height-sm);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-default);
+  font-size: var(--font-size-sm);
+  text-align: left;
+}
+
+.navbar-two__account-item svg {
+  width: var(--space-6);
+  height: var(--space-6);
+  flex-shrink: 0;
+}
+
+.navbar-two__account-item:hover { background-color: var(--color-bg-muted); }
+
+.navbar-two__account-separator {
+  margin: var(--space-1) var(--space-2);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.navbar-two__account-logout,
+.navbar-two__sign-in:hover { color: var(--color-primary); }
+
+.navbar-two__account-logout:disabled { cursor: default; }
+.navbar-two__account-logout:disabled:hover { background-color: transparent; }
+
+.navbar-two__account-trigger:focus-visible,
+.navbar-two__account-item:focus-visible,
+.navbar-two__sign-in:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: var(--space-1);
+}
+
+@media (max-width: 575.98px) {
+  .navbar-two__account-trigger { padding-inline: var(--space-1); }
+  .navbar-two__sign-in { padding-inline: var(--space-1); }
+}
+
 .navbar-two__badge {
   position: absolute;
   top: 2px;

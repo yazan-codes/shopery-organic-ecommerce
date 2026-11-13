@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { shoperyIcons } from "../../data/data";
 import "./Navigation.css";
-import { Link } from "react-router-dom";
-import { Category_Product_Context } from "../../context/Context";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext, Category_Product_Context } from "../../context/Context";
 
 function NavbarTwo() {
   const LeafIcon = shoperyIcons.leaf;
@@ -12,10 +12,13 @@ function NavbarTwo() {
   const MenuIcon = shoperyIcons.listView;
   const CloseIcon = shoperyIcons.remove;
   const Account = shoperyIcons.account;
+  const AccountChevron = shoperyIcons.dropdown;
+  const LogoutIcon = shoperyIcons.next;
   // const DropdownIcon = shoperyIcons.dropdown;
   const PhoneIcon = shoperyIcons.phone;
 
 
+   let { user, handleLogout } = useContext(AuthContext);
    
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -35,7 +38,7 @@ function NavbarTwo() {
 
   return (
     <nav className="navbar-two" aria-label="Main navigation">
-      <div className="container d-flex align-items-center justify-content-between gap-4">
+      <div className="container d-flex align-items-center justify-content-between gap-2 gap-sm-4">
         <Link
           className="navbar-two__brand d-flex align-items-center gap-2"
           to="/"
@@ -61,8 +64,8 @@ function NavbarTwo() {
             <SearchIcon aria-hidden="true" />
           </button>
         </form>
-        <div className="navbar-two__tools d-flex flex-row align-items-center gap-3">
-          <div className="navbar-two__actions d-flex align-items-center gap-3">
+        <div className="navbar-two__tools d-flex flex-row align-items-center gap-2 gap-sm-3">
+          <div className="navbar-two__actions d-flex align-items-center gap-2 gap-sm-3">
             <Link to="/my-wishlist">
               <button
                 className="navbar-two__icon-button"
@@ -76,30 +79,79 @@ function NavbarTwo() {
                 </span>
               </button>
             </Link>
-            <button
-              className="navbar-two__icon-button"
-              type="button"
-              aria-label="Account"
-            >
-              <Account aria-hidden="true" />
-            </button>
-            <span className="navbar-two__divider" aria-hidden="true" />
-            <Link to="/shopping-cart">
-              <button
-                className="navbar-two__icon-button"
-                type="button"
-                aria-label="Shopping cart"
+
+            {user ? (
+              <details className="navbar-two__account position-relative">
+                <summary
+                  className="navbar-two__account-trigger d-flex align-items-center gap-2"
+                >
+                  <Account
+                    className="navbar-two__account-icon"
+                    aria-hidden="true"
+                  />
+                  <span className="navbar-two__account-name d-none d-sm-inline">
+                    Hi, {user.name || "customer"}
+                  </span>
+                  <AccountChevron
+                    className="navbar-two__account-chevron d-none d-sm-block"
+                    aria-hidden="true"
+                  />
+                </summary>
+                <div className="navbar-two__account-menu">
+                  <Link
+                    to={`/account/${user.id}`}
+                    className="navbar-two__account-item d-flex align-items-center gap-2"
+                  >
+                    <Account aria-hidden="true" />
+                    <span>My Account</span>
+                  </Link>
+                  <div className="navbar-two__account-separator" />
+                  {/* Presentation only; the existing authentication logic is unchanged. */}
+                  <button
+                    className="navbar-two__account-item navbar-two__account-logout d-flex align-items-center gap-2 w-100"
+                    type="button"
+                    onClick={handleLogout}
+                  >
+                    <LogoutIcon aria-hidden="true" />
+                    <span>Log out</span>
+                  </button>
+                </div>
+              </details>
+            ) : (
+              <Link
+                to="/login"
+                className="navbar-two__sign-in d-flex align-items-center gap-2"
+                aria-label="Sign In"
               >
-                <CartIcon aria-hidden="true" />
-                <span className="navbar-two__badge">
-                  {cartItems ? cartItems.length : 0}
-                </span>
-              </button>
+                <Account
+                  className="navbar-two__account-icon"
+                  aria-hidden="true"
+                />
+                <span className="d-none d-sm-inline">Sign In</span>
+              </Link>
+            )}
+            <span
+              className="navbar-two__divider d-none d-sm-block"
+              aria-hidden="true"
+            />
+            <Link to="/shopping-cart">
+              <div className="d-flex gap-3">
+                <button
+                  className="navbar-two__icon-button"
+                  type="button"
+                  aria-label="Shopping cart"
+                >
+                  <CartIcon aria-hidden="true" />
+                  <span className="navbar-two__badge">
+                    {cartItems ? cartItems.length : 0}
+                  </span>
+                </button>
+                <div className="navbar-two__cart-total d-none d-sm-block">
+                  <span className="navbar-two__cart-label">Shopping cart:</span>
+                  <strong>$57.00</strong>
+                </div>
+              </div>
             </Link>
-            <div className="navbar-two__cart-total d-none d-sm-block">
-              <span className="navbar-two__cart-label">Shopping cart:</span>
-              <strong>$57.00</strong>
-            </div>
           </div>
 
           <button

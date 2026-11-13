@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { shoperyIcons } from "../../data/data";
 import "./Breadcrumb.css";
 
@@ -6,6 +6,8 @@ const HomeIcon = shoperyIcons.home;
 const ChevronIcon = shoperyIcons.breadcrumbNext;
 
 export default function Breadcrumb({ items }) {
+  // let location= useLocation()
+  // console.log(location.pathname)
   return (
     <nav className="page-breadcrumb" aria-label="Breadcrumb">
       <ol className="container d-flex align-items-center flex-wrap gap-3">

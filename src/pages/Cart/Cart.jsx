@@ -23,8 +23,17 @@ function Cart() {
     RemoveProductFromCart,
   } = useContext(Category_Product_Context);
 
+
+function handleDiscountPercentage(d) {
+  return d.discountPercentage
+    ? d.price - d.price * (d.discountPercentage / 100)
+    : d.price;
+}
+
+
+
   let TotalAmount = cartItems
-    .map((item) => item.quantity * item.price)
+    .map((item) => item.quantity * handleDiscountPercentage(item))
     .reduce((a, c) => a + c, 0);
   const temporaryCartSummary = {
     subtotal: currencyFormatter.format(TotalAmount ?? 0),
@@ -35,11 +44,7 @@ function Cart() {
   // console.log(cartItems);
 
   
-  function handleDiscountPercentage(d) {
-    return d.discountPercentage
-      ? d.price - d.price * (d.discountPercentage / 100)
-      : d.price;
-  }
+  
 
   if (cartItems.length === 0) {
     return (

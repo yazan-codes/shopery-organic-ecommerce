@@ -13,6 +13,8 @@ import Blog from "./pages/Blog/Blog.jsx";
 import BlogDetails from "./pages/Blog/BlogDetails.jsx";
 import About from "./pages/About/About.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import Login from "./pages/Login/Login.jsx";
+import Register from "./pages/Register/Register.jsx";
 
 function App() {
 
@@ -40,6 +42,8 @@ function App() {
 
         <Route path="/shopping-cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
     </>

@@ -1,0 +1,138 @@
+.login-page__content {
+  padding-block: var(--space-20);
+}
+
+.login-panel {
+  max-width: var(--auth-panel-width);
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-page);
+  box-shadow: var(--shadow-contact-card), inset 0 0 0 1px var(--color-bg-muted);
+}
+
+.login-panel__title {
+  margin-bottom: var(--space-5);
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-tight);
+}
+
+.login-panel__fields { gap: var(--space-3); }
+
+.login-panel__field .form-control {
+  height: var(--form-control-height);
+  line-height: var(--auth-input-line-height);
+}
+
+.login-panel__field--password .form-control {
+  padding-right: calc(var(--space-4) + var(--space-5) + var(--space-3));
+}
+
+.login-panel__eye {
+  top: 50%;
+  right: var(--space-4);
+  width: var(--space-5);
+  height: var(--space-5);
+  transform: translateY(-50%);
+  color: var(--color-text-strong);
+}
+
+.login-panel__eye svg { width: 100%; height: 100%; }
+
+/* Presentation only: validation controls the input's aria-invalid attribute. */
+.login-panel__field--email .form-control[aria-invalid="true"],
+.login-panel__field--email .form-control[aria-invalid="true"]:focus,
+.login-panel__field--password .form-control[aria-invalid="true"],
+.login-panel__field--password .form-control[aria-invalid="true"]:focus {
+  border-color: var(--color-danger);
+  box-shadow: none;
+}
+
+.login-panel__field--email .form-control[aria-invalid="true"]:focus-visible,
+.login-panel__field--password .form-control[aria-invalid="true"]:focus-visible {
+  outline: 1px solid var(--color-danger);
+  outline-offset: 1px;
+}
+
+.login-panel__email-error,
+.login-panel__password-error {
+  display: none;
+  margin: calc(-1 * var(--space-2)) 0 0;
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+}
+
+.login-panel__field--email:has(.form-control[aria-invalid="true"]) + .login-panel__email-error,
+.login-panel__field--password:has(.form-control[aria-invalid="true"]) + .login-panel__password-error {
+  display: block;
+}
+
+.login-panel__password-required { display: none; }
+
+.login-panel__email-required { display: none; }
+
+.login-panel__field--email:has(.form-control:placeholder-shown) + .login-panel__email-error .login-panel__email-required {
+  display: inline;
+}
+
+.login-panel__field--password:has(.form-control:placeholder-shown) + .login-panel__password-error .login-panel__password-required {
+  display: inline;
+}
+
+.login-panel__options {
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-5);
+  min-height: var(--auth-options-height);
+}
+
+.login-panel__options .form-check {
+  align-items: center;
+  gap: var(--auth-checkbox-gap);
+  min-height: var(--auth-options-height);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+}
+
+.login-panel__options .form-check-input { border-radius: var(--radius-xs); }
+
+.login-panel__secondary,
+.login-panel__switch {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-body);
+}
+
+.login-panel__button {
+  min-height: var(--button-height-md);
+  padding-block: var(--space-3);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-tight);
+  background-color: var(--color-auth-button);
+}
+
+.login-panel__switch {
+  padding-top: var(--space-1);
+  margin-top: var(--space-5);
+}
+
+.login-panel__switch a {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-strong);
+}
+
+.login-panel__secondary:hover,
+.login-panel__switch a:hover { color: var(--color-primary); }
+
+.login-panel button:focus-visible,
+.login-panel a:focus-visible {
+  outline: 2px solid var(--color-primary-hover);
+  outline-offset: var(--space-1);
+}
+
+@media (max-width: 575.98px) {
+  .login-page__content { padding-block: var(--space-12); }
+  .login-panel { padding-inline: var(--space-4); }
+  .login-panel__title { font-size: var(--font-size-h6); }
+}
+

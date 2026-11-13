@@ -1,7 +1,27 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "name": "Ahmad",
+      "email": "ahmad@example.test",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "yazan",
+      "email": "yazan@example.test",
+      "password": "67890"
+    },
+    {
+      "id": "LGKZHq0FXUI",
+      "name": "hassan",
+      "email": "hassan@example.test",
+      "password": "123"
+    }
+  ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Organic Green Apples",
       "description": "Crisp organic green apples with a bright tart flavor, ideal for snacking, salads, and fresh juices.",
       "category": "Fruits & Vegetables",
@@ -9,7 +29,12 @@
       "discountPercentage": 6,
       "rating": 3.8,
       "stock": 86,
-      "tags": ["organic", "fruit", "apples", "fresh"],
+      "tags": [
+        "organic",
+        "fruit",
+        "apples",
+        "fresh"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-FV-0001",
       "weight": 1,
@@ -45,7 +70,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Fresh Ripe Mango",
       "description": "Sweet ripe mango with rich tropical aroma, perfect for smoothies, desserts, and fruit bowls.",
       "category": "Fruits & Vegetables",
@@ -53,7 +78,12 @@
       "discountPercentage": 6.25,
       "rating": 1.7,
       "stock": 64,
-      "tags": ["fruit", "mango", "tropical", "fresh"],
+      "tags": [
+        "fruit",
+        "mango",
+        "tropical",
+        "fresh"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-FV-0002",
       "weight": 1,
@@ -83,10 +113,13 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0002"
       },
       "thumbnail": "/images/mango-isolated.jpg",
-      "images": ["/images/mango-isolated.jpg", "/images/mango-halves-large.jpg"]
+      "images": [
+        "/images/mango-isolated.jpg",
+        "/images/mango-halves-large.jpg"
+      ]
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Juicy Navel Oranges",
       "description": "Naturally sweet oranges packed with citrus flavor and vitamin C for everyday healthy snacking.",
       "category": "Fruits & Vegetables",
@@ -94,7 +127,12 @@
       "discountPercentage": 7.1,
       "rating": 2.6,
       "stock": 92,
-      "tags": ["fruit", "oranges", "citrus", "fresh"],
+      "tags": [
+        "fruit",
+        "oranges",
+        "citrus",
+        "fresh"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-FV-0003",
       "weight": 2,
@@ -130,7 +168,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Fresh Strawberries",
       "description": "Bright red strawberries with natural sweetness, selected for desserts, smoothies, and breakfast bowls.",
       "category": "Fruits & Vegetables",
@@ -138,7 +176,12 @@
       "discountPercentage": "",
       "rating": 4.8,
       "stock": 38,
-      "tags": ["fruit", "strawberries", "berries", "fresh"],
+      "tags": [
+        "fruit",
+        "strawberries",
+        "berries",
+        "fresh"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-FV-0004",
       "weight": 1,
@@ -168,10 +211,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0004"
       },
       "thumbnail": "/images/strawberry-isolated.jpg",
-      "images": ["/images/strawberry-isolated.jpg"]
+      "images": [
+        "/images/strawberry-isolated.jpg"
+      ]
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Blueberries Bowl Pack",
       "description": "Fresh blueberries packed with antioxidants, ideal for oatmeal, yogurt, smoothies, and baking.",
       "category": "Fruits & Vegetables",
@@ -179,7 +224,12 @@
       "discountPercentage": 5.8,
       "rating": 1.7,
       "stock": 42,
-      "tags": ["fruit", "blueberries", "berries", "fresh"],
+      "tags": [
+        "fruit",
+        "blueberries",
+        "berries",
+        "fresh"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-FV-0005",
       "weight": 1,
@@ -209,10 +259,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0005"
       },
       "thumbnail": "/images/blueberries-bowl.jpg",
-      "images": ["/images/blueberries-bowl.jpg"]
+      "images": [
+        "/images/blueberries-bowl.jpg"
+      ]
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Coconut Halves",
       "description": "Fresh coconut halves with naturally sweet flesh, suitable for desserts, smoothies, and tropical recipes.",
       "category": "Fruits & Vegetables",
@@ -220,7 +272,12 @@
       "discountPercentage": 0,
       "rating": 4.5,
       "stock": 29,
-      "tags": ["fruit", "coconut", "tropical", "fresh"],
+      "tags": [
+        "fruit",
+        "coconut",
+        "tropical",
+        "fresh"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-FV-0006",
       "weight": 2,
@@ -250,10 +307,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0006"
       },
       "thumbnail": "/images/coconut-halves.jpg",
-      "images": ["/images/coconut-halves.jpg"]
+      "images": [
+        "/images/coconut-halves.jpg"
+      ]
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Green Lemons",
       "description": "Zesty green lemons with a sharp citrus aroma, great for drinks, dressings, marinades, and desserts.",
       "category": "Fruits & Vegetables",
@@ -261,7 +320,12 @@
       "discountPercentage": 6.75,
       "rating": 2.6,
       "stock": 73,
-      "tags": ["fruit", "lemons", "citrus", "fresh"],
+      "tags": [
+        "fruit",
+        "lemons",
+        "citrus",
+        "fresh"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-FV-0007",
       "weight": 1,
@@ -291,10 +355,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0007"
       },
       "thumbnail": "/images/green-lemons-on-tree.jpg",
-      "images": ["/images/green-lemons-on-tree.jpg"]
+      "images": [
+        "/images/green-lemons-on-tree.jpg"
+      ]
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Fresh Broccoli Crown",
       "description": "Firm green broccoli crown, excellent for steaming, roasting, stir-frying, and healthy meal prep.",
       "category": "Fruits & Vegetables",
@@ -302,7 +368,12 @@
       "discountPercentage": 5.5,
       "rating": 4.7,
       "stock": 58,
-      "tags": ["vegetable", "broccoli", "green", "fresh"],
+      "tags": [
+        "vegetable",
+        "broccoli",
+        "green",
+        "fresh"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0008",
       "weight": 1,
@@ -332,10 +403,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0008"
       },
       "thumbnail": "/images/broccoli-isolated.jpg",
-      "images": ["/images/broccoli-isolated.jpg"]
+      "images": [
+        "/images/broccoli-isolated.jpg"
+      ]
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Organic Carrots",
       "description": "Sweet crunchy carrots grown for everyday cooking, salads, roasting, juicing, and lunchbox snacks.",
       "category": "Fruits & Vegetables",
@@ -343,7 +416,12 @@
       "discountPercentage": "",
       "rating": 3.6,
       "stock": 95,
-      "tags": ["vegetable", "carrots", "organic", "fresh"],
+      "tags": [
+        "vegetable",
+        "carrots",
+        "organic",
+        "fresh"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0009",
       "weight": 1,
@@ -373,10 +451,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0009"
       },
       "thumbnail": "/images/carrots-closeup.jpg",
-      "images": ["/images/carrots-closeup.jpg"]
+      "images": [
+        "/images/carrots-closeup.jpg"
+      ]
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "White Cauliflower Head",
       "description": "Fresh cauliflower head with a mild flavor, great for roasting, soups, low-carb rice, and gratins.",
       "category": "Fruits & Vegetables",
@@ -384,7 +464,12 @@
       "discountPercentage": 0,
       "rating": 4.5,
       "stock": 44,
-      "tags": ["vegetable", "cauliflower", "fresh", "organic"],
+      "tags": [
+        "vegetable",
+        "cauliflower",
+        "fresh",
+        "organic"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0010",
       "weight": 2,
@@ -414,10 +499,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0010"
       },
       "thumbnail": "/images/cauliflower-isolated-large.jpg",
-      "images": ["/images/cauliflower-isolated-large.jpg"]
+      "images": [
+        "/images/cauliflower-isolated-large.jpg"
+      ]
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Sweet Corn Cobs",
       "description": "Fresh sweet corn cobs with tender kernels, perfect for grilling, boiling, soups, and summer sides.",
       "category": "Fruits & Vegetables",
@@ -425,7 +512,12 @@
       "discountPercentage": 0,
       "rating": 1.7,
       "stock": 67,
-      "tags": ["vegetable", "corn", "fresh", "sweet"],
+      "tags": [
+        "vegetable",
+        "corn",
+        "fresh",
+        "sweet"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0011",
       "weight": 2,
@@ -455,10 +547,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0011"
       },
       "thumbnail": "/images/corn-cobs-02.jpg",
-      "images": ["/images/corn-cobs-02.jpg"]
+      "images": [
+        "/images/corn-cobs-02.jpg"
+      ]
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Fresh Cucumbers",
       "description": "Cool crisp cucumbers for salads, sandwiches, pickling, detox water, and fresh vegetable platters.",
       "category": "Fruits & Vegetables",
@@ -466,7 +560,12 @@
       "discountPercentage": 5.4,
       "rating": 4.6,
       "stock": 88,
-      "tags": ["vegetable", "cucumber", "fresh", "green"],
+      "tags": [
+        "vegetable",
+        "cucumber",
+        "fresh",
+        "green"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0012",
       "weight": 1,
@@ -502,7 +601,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Fresh Eggplant",
       "description": "Glossy eggplant with tender flesh, suitable for grilling, roasting, stews, dips, and Mediterranean dishes.",
       "category": "Fruits & Vegetables",
@@ -510,7 +609,12 @@
       "discountPercentage": "",
       "rating": 2.4,
       "stock": 36,
-      "tags": ["vegetable", "eggplant", "fresh", "organic"],
+      "tags": [
+        "vegetable",
+        "eggplant",
+        "fresh",
+        "organic"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0013",
       "weight": 1,
@@ -540,10 +644,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0013"
       },
       "thumbnail": "/images/eggplant-isolated.jpg",
-      "images": ["/images/eggplant-isolated.jpg"]
+      "images": [
+        "/images/eggplant-isolated.jpg"
+      ]
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "Green Lettuce Head",
       "description": "Fresh green lettuce head with crisp leaves for salads, wraps, burgers, and healthy side dishes.",
       "category": "Fruits & Vegetables",
@@ -551,7 +657,12 @@
       "discountPercentage": 6.3,
       "rating": 4.7,
       "stock": 52,
-      "tags": ["vegetable", "lettuce", "leafy-greens", "fresh"],
+      "tags": [
+        "vegetable",
+        "lettuce",
+        "leafy-greens",
+        "fresh"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0014",
       "weight": 1,
@@ -581,10 +692,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0014"
       },
       "thumbnail": "/images/green-lettuce-head.jpg",
-      "images": ["/images/green-lettuce-head.jpg"]
+      "images": [
+        "/images/green-lettuce-head.jpg"
+      ]
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "Napa Cabbage",
       "description": "Tender napa cabbage with mild flavor, ideal for stir-fries, soups, salads, and homemade kimchi.",
       "category": "Fruits & Vegetables",
@@ -592,7 +705,12 @@
       "discountPercentage": 5.95,
       "rating": 4.5,
       "stock": 47,
-      "tags": ["vegetable", "cabbage", "leafy-greens", "fresh"],
+      "tags": [
+        "vegetable",
+        "cabbage",
+        "leafy-greens",
+        "fresh"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0015",
       "weight": 2,
@@ -628,7 +746,7 @@
       ]
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Fresh Okra",
       "description": "Fresh green okra pods selected for stews, roasting, frying, and traditional vegetable recipes.",
       "category": "Fruits & Vegetables",
@@ -636,7 +754,12 @@
       "discountPercentage": 7.45,
       "rating": 3.4,
       "stock": 31,
-      "tags": ["vegetable", "okra", "fresh", "green"],
+      "tags": [
+        "vegetable",
+        "okra",
+        "fresh",
+        "green"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0016",
       "weight": 1,
@@ -666,10 +789,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0016"
       },
       "thumbnail": "/images/okra-isolated-02.jpg",
-      "images": ["/images/okra-isolated-02.jpg"]
+      "images": [
+        "/images/okra-isolated-02.jpg"
+      ]
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "Farm Potatoes",
       "description": "Versatile farm potatoes with earthy flavor, suitable for baking, frying, mashing, and soups.",
       "category": "Fruits & Vegetables",
@@ -677,7 +802,12 @@
       "discountPercentage": 9.2,
       "rating": 4.6,
       "stock": 120,
-      "tags": ["vegetable", "potatoes", "root-vegetables", "fresh"],
+      "tags": [
+        "vegetable",
+        "potatoes",
+        "root-vegetables",
+        "fresh"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0017",
       "weight": 3,
@@ -707,10 +837,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-FV-0017"
       },
       "thumbnail": "/images/potatoes-isolated.jpg",
-      "images": ["/images/potatoes-isolated.jpg"]
+      "images": [
+        "/images/potatoes-isolated.jpg"
+      ]
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "Fresh Red Tomatoes",
       "description": "Ripe red tomatoes with balanced sweetness and acidity for salads, sauces, sandwiches, and cooking.",
       "category": "Fruits & Vegetables",
@@ -718,7 +850,12 @@
       "discountPercentage": 8.1,
       "rating": 1.7,
       "stock": 78,
-      "tags": ["vegetable", "tomatoes", "fresh", "salad"],
+      "tags": [
+        "vegetable",
+        "tomatoes",
+        "fresh",
+        "salad"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0018",
       "weight": 2,
@@ -754,7 +891,7 @@
       ]
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "Colorful Mini Peppers",
       "description": "Sweet colorful mini peppers with a crisp bite, perfect for salads, roasting, lunchboxes, and snacks.",
       "category": "Fruits & Vegetables",
@@ -762,7 +899,12 @@
       "discountPercentage": 6.85,
       "rating": 4.8,
       "stock": 43,
-      "tags": ["vegetable", "peppers", "fresh", "sweet"],
+      "tags": [
+        "vegetable",
+        "peppers",
+        "fresh",
+        "sweet"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0019",
       "weight": 1,
@@ -799,7 +941,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "Green Chili Peppers",
       "description": "Fresh green chili peppers with bold heat, ideal for sauces, marinades, stir-fries, and spicy dishes.",
       "category": "Fruits & Vegetables",
@@ -807,7 +949,12 @@
       "discountPercentage": 4.5,
       "rating": 4.5,
       "stock": 55,
-      "tags": ["vegetable", "chili", "spicy", "fresh"],
+      "tags": [
+        "vegetable",
+        "chili",
+        "spicy",
+        "fresh"
+      ],
       "brand": "Green Valley Farms",
       "sku": "SHP-FV-0020",
       "weight": 1,
@@ -843,7 +990,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": "21",
       "title": "Organic Spinach Leaves",
       "description": "Tender organic spinach leaves for salads, smoothies, sautés, omelets, and nutrient-rich meals.",
       "category": "Organic Foods",
@@ -851,7 +998,12 @@
       "discountPercentage": 7.6,
       "rating": 4.7,
       "stock": 34,
-      "tags": ["organic", "spinach", "leafy-greens", "healthy"],
+      "tags": [
+        "organic",
+        "spinach",
+        "leafy-greens",
+        "healthy"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-OF-0021",
       "weight": 1,
@@ -887,7 +1039,7 @@
       ]
     },
     {
-      "id": 22,
+      "id": "22",
       "title": "Ready Fresh Salad Bowl",
       "description": "Prepared green salad bowl with fresh vegetables, suitable for a quick lunch or healthy side meal.",
       "category": "Organic Foods",
@@ -895,7 +1047,12 @@
       "discountPercentage": 0,
       "rating": 2.6,
       "stock": 22,
-      "tags": ["organic", "salad", "ready-to-eat", "healthy"],
+      "tags": [
+        "organic",
+        "salad",
+        "ready-to-eat",
+        "healthy"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-OF-0022",
       "weight": 1,
@@ -931,7 +1088,7 @@
       ]
     },
     {
-      "id": 23,
+      "id": "23",
       "title": "Organic Honey Jam Jars",
       "description": "Assorted honey and fruit jam jars made for toast, pastries, yogurt bowls, and breakfast spreads.",
       "category": "Organic Foods",
@@ -939,7 +1096,12 @@
       "discountPercentage": 0,
       "rating": 3.8,
       "stock": 39,
-      "tags": ["organic", "honey", "jam", "pantry"],
+      "tags": [
+        "organic",
+        "honey",
+        "jam",
+        "pantry"
+      ],
       "brand": "Nature Jar",
       "sku": "SHP-OF-0023",
       "weight": 2,
@@ -969,10 +1131,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-OF-0023"
       },
       "thumbnail": "/images/honey-jam-jars.png",
-      "images": ["/images/honey-jam-jars.png"]
+      "images": [
+        "/images/honey-jam-jars.png"
+      ]
     },
     {
-      "id": 24,
+      "id": "24",
       "title": "Cold Pressed Cooking Oil",
       "description": "Golden cold pressed cooking oil for sautéing, dressings, roasting, and everyday kitchen preparation.",
       "category": "Organic Foods",
@@ -980,7 +1144,12 @@
       "discountPercentage": 8.9,
       "rating": 1.6,
       "stock": 61,
-      "tags": ["organic", "cooking-oil", "pantry", "kitchen"],
+      "tags": [
+        "organic",
+        "cooking-oil",
+        "pantry",
+        "kitchen"
+      ],
       "brand": "Pure Harvest",
       "sku": "SHP-OF-0024",
       "weight": 2,
@@ -1016,7 +1185,7 @@
       ]
     },
     {
-      "id": 25,
+      "id": "25",
       "title": "Organic Rice Grocery Pack",
       "description": "Premium organic rice pack for daily cooking, meal prep, bowls, soups, and family pantry stocking.",
       "category": "Organic Foods",
@@ -1024,7 +1193,12 @@
       "discountPercentage": 6.4,
       "rating": 4.5,
       "stock": 75,
-      "tags": ["organic", "rice", "pantry", "grains"],
+      "tags": [
+        "organic",
+        "rice",
+        "pantry",
+        "grains"
+      ],
       "brand": "Pure Harvest",
       "sku": "SHP-OF-0025",
       "weight": 5,
@@ -1054,10 +1228,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-OF-0025"
       },
       "thumbnail": "/images/rice-grocery-products.png",
-      "images": ["/images/rice-grocery-products.png"]
+      "images": [
+        "/images/rice-grocery-products.png"
+      ]
     },
     {
-      "id": 26,
+      "id": "26",
       "title": "Assorted Organic Grocery Set",
       "description": "Assorted packaged organic grocery essentials for pantry refills, cooking, snacks, and household meals.",
       "category": "Organic Foods",
@@ -1065,7 +1241,12 @@
       "discountPercentage": 12.35,
       "rating": 4.7,
       "stock": 28,
-      "tags": ["organic", "groceries", "pantry", "assorted"],
+      "tags": [
+        "organic",
+        "groceries",
+        "pantry",
+        "assorted"
+      ],
       "brand": "Shopery Organics",
       "sku": "SHP-OF-0026",
       "weight": 6,
@@ -1102,7 +1283,7 @@
       ]
     },
     {
-      "id": 27,
+      "id": "27",
       "title": "Assorted Butter Cookies",
       "description": "Crisp assorted cookies with a buttery texture, made for tea time, desserts, and family snacks.",
       "category": "Bakery",
@@ -1110,7 +1291,12 @@
       "discountPercentage": 7.8,
       "rating": 4.4,
       "stock": 48,
-      "tags": ["bakery", "cookies", "snacks", "sweet"],
+      "tags": [
+        "bakery",
+        "cookies",
+        "snacks",
+        "sweet"
+      ],
       "brand": "Golden Oven",
       "sku": "SHP-BK-0027",
       "weight": 1,
@@ -1140,10 +1326,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-BK-0027"
       },
       "thumbnail": "/images/assorted-cookies-02.jpg",
-      "images": ["/images/assorted-cookies-02.jpg"]
+      "images": [
+        "/images/assorted-cookies-02.jpg"
+      ]
     },
     {
-      "id": 28,
+      "id": "28",
       "title": "Fresh Whole Milk Bottle",
       "description": "Fresh whole milk with a smooth creamy taste, suitable for cereal, coffee, baking, and daily nutrition.",
       "category": "Dairy Products",
@@ -1151,7 +1339,12 @@
       "discountPercentage": 0,
       "rating": 4.6,
       "stock": 33,
-      "tags": ["dairy", "milk", "fresh", "refrigerated"],
+      "tags": [
+        "dairy",
+        "milk",
+        "fresh",
+        "refrigerated"
+      ],
       "brand": "Dairy Meadow",
       "sku": "SHP-DP-0028",
       "weight": 2,
@@ -1181,10 +1374,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-DP-0028"
       },
       "thumbnail": "/images/milk-splash-bottle-wide.jpg",
-      "images": ["/images/milk-splash-bottle-wide.jpg"]
+      "images": [
+        "/images/milk-splash-bottle-wide.jpg"
+      ]
     },
     {
-      "id": 29,
+      "id": "29",
       "title": "Classic Cola Drink",
       "description": "Refreshing cola drink served chilled, ideal for parties, quick meals, and casual grocery orders.",
       "category": "Beverages",
@@ -1192,7 +1387,12 @@
       "discountPercentage": 0,
       "rating": 4.2,
       "stock": 96,
-      "tags": ["beverage", "cola", "drink", "refreshing"],
+      "tags": [
+        "beverage",
+        "cola",
+        "drink",
+        "refreshing"
+      ],
       "brand": "CoolFizz",
       "sku": "SHP-BV-0029",
       "weight": 1,
@@ -1222,10 +1422,12 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-BV-0029"
       },
       "thumbnail": "/images/cola-glass-ice-splash.jpg",
-      "images": ["/images/cola-glass-ice-splash.jpg"]
+      "images": [
+        "/images/cola-glass-ice-splash.jpg"
+      ]
     },
     {
-      "id": 30,
+      "id": "30",
       "title": "Orange Citrus Splash Drink",
       "description": "Bright orange citrus beverage with a refreshing fruity taste, made for chilled serving and summer meals.",
       "category": "Beverages",
@@ -1233,7 +1435,12 @@
       "discountPercentage": 0,
       "rating": 4.5,
       "stock": 72,
-      "tags": ["beverage", "orange", "citrus", "drink"],
+      "tags": [
+        "beverage",
+        "orange",
+        "citrus",
+        "drink"
+      ],
       "brand": "Citrus Grove",
       "sku": "SHP-BV-0030",
       "weight": 1,
@@ -1269,7 +1476,7 @@
       ]
     },
     {
-      "id": 31,
+      "id": "31",
       "title": "Natural Personal Care Set",
       "description": "Daily personal care set with gentle formulas suited for eco-conscious bathroom and grooming routines.",
       "category": "Beauty & Personal Care",
@@ -1277,7 +1484,12 @@
       "discountPercentage": 0,
       "rating": 4.6,
       "stock": 37,
-      "tags": ["personal-care", "beauty", "eco", "bathroom"],
+      "tags": [
+        "personal-care",
+        "beauty",
+        "eco",
+        "bathroom"
+      ],
       "brand": "EcoCare Naturals",
       "sku": "SHP-BP-0031",
       "weight": 2,
@@ -1307,45 +1519,48 @@
         "qrCode": "https://dummyjson.com/qr-code?data=SHP-BP-0031"
       },
       "thumbnail": "/images/personal-care-products.png",
-      "images": ["/images/personal-care-products.png"]
+      "images": [
+        "/images/personal-care-products.png"
+      ]
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Fruits & Vegetables",
       "slug": "fruits-and-vegetables",
       "image": "/images/produce-basket-isolated-large.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Organic Foods",
       "slug": "organic-foods",
       "image": "/images/packaged-groceries-set.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Dairy Products",
       "slug": "dairy-products",
       "image": "/images/milk-splash-bottle-wide.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Beverages",
       "slug": "beverages",
       "image": "/images/orange-water-slices-blue.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Bakery",
       "slug": "bakery",
       "image": "/images/assorted-cookies-02.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Beauty & Personal Care",
       "slug": "beauty-and-personal-care",
       "image": "/images/personal-care-products.png"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
