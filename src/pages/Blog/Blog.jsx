@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router";
 import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import ShopToolbar from "../../Components/ShopToolbar/ShopToolbar";
 import BlogCard from "../../Components/Blog/BlogCard";
@@ -54,7 +54,6 @@ function Blog() {
     <main className="shopery-content-page blog-page">
       <Breadcrumb items={[{ label: "Blog" }]} />
       <div className="container blog-page__content">
-        <h1 className="visually-hidden">Blog</h1>
         <ShopToolbar
           variant="blog"
           resultCount={posts.length}
@@ -84,7 +83,7 @@ function Blog() {
                 <Link to="/blog">Clear filters</Link>
               </div>
             )}
-            <div className="row g-4" aria-live="polite">
+            <div className="row g-4">
               {posts
                 .slice((page - 1) * pageSize, page * pageSize)
                 .map((post) => (

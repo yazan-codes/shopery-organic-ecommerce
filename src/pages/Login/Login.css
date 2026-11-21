@@ -38,17 +38,17 @@
 
 .login-panel__eye svg { width: 100%; height: 100%; }
 
-/* Presentation only: validation controls the input's aria-invalid attribute. */
-.login-panel__field--email .form-control[aria-invalid="true"],
-.login-panel__field--email .form-control[aria-invalid="true"]:focus,
-.login-panel__field--password .form-control[aria-invalid="true"],
-.login-panel__field--password .form-control[aria-invalid="true"]:focus {
+/* Presentation only: validation controls the input's data-invalid attribute. */
+.login-panel__field--email .form-control[data-invalid="true"],
+.login-panel__field--email .form-control[data-invalid="true"]:focus,
+.login-panel__field--password .form-control[data-invalid="true"],
+.login-panel__field--password .form-control[data-invalid="true"]:focus {
   border-color: var(--color-danger);
   box-shadow: none;
 }
 
-.login-panel__field--email .form-control[aria-invalid="true"]:focus-visible,
-.login-panel__field--password .form-control[aria-invalid="true"]:focus-visible {
+.login-panel__field--email .form-control[data-invalid="true"]:focus-visible,
+.login-panel__field--password .form-control[data-invalid="true"]:focus-visible {
   outline: 1px solid var(--color-danger);
   outline-offset: 1px;
 }
@@ -62,8 +62,8 @@
   line-height: var(--line-height-body);
 }
 
-.login-panel__field--email:has(.form-control[aria-invalid="true"]) + .login-panel__email-error,
-.login-panel__field--password:has(.form-control[aria-invalid="true"]) + .login-panel__password-error {
+.login-panel__field--email:has(.form-control[data-invalid="true"]) + .login-panel__email-error,
+.login-panel__field--password:has(.form-control[data-invalid="true"]) + .login-panel__password-error {
   display: block;
 }
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import FormField from "../../Components/Forms/FormField";
 import { shoperyIcons } from "../../data/data";
@@ -52,7 +52,6 @@ function Login() {
         />
         <section
           className="login-page__content container d-flex justify-content-center"
-          aria-labelledby="login-title"
         >
           <form
             className="login-panel w-100"
@@ -73,8 +72,7 @@ function Login() {
                   // required
                   placeholder="Email"
                   autoComplete="email"
-                  aria-invalid={fieldErrors && !dataUser.email}
-                  aria-describedby="login-email-error"
+                  data-invalid={fieldErrors && !dataUser.email}
                   
                   onChange={
                     (e) => handleDataLogin("email", e.target.value)
@@ -85,7 +83,6 @@ function Login() {
               <p
                 id="login-email-error"
                 className="login-panel__email-error invalid-feedback"
-                role="alert"
               >
                 <span className="login-panel__email-required">
                   Please enter your email.
@@ -99,23 +96,20 @@ function Login() {
                   type="password"
                   placeholder="Password"
                   autoComplete="current-password"
-                  // Set aria-invalid from your validation state when it is ready.
-                  aria-invalid={fieldErrors && !dataUser.password}
-                  aria-describedby="login-password-error"
+                  
+                  data-invalid={fieldErrors && !dataUser.password}
                   onChange={(e) => handleDataLogin("password", e.target.value)}
                 />
                 <button
                   type="button"
                   className="login-panel__eye position-absolute d-inline-flex align-items-center justify-content-center p-0"
-                  aria-label="Show password"
                 >
-                  <EyeIcon aria-hidden="true" />
+                  <EyeIcon />
                 </button>
               </div>
               <p
                 id="login-password-error"
                 className="login-panel__password-error invalid-feedback"
-                role="alert"
               >
                 <span className="login-panel__password-required">
                   Please enter your password.
@@ -140,7 +134,7 @@ function Login() {
             </div>
             {/* User Error Message */}
             {errorUser && (
-              <p role="alert">Incorrect email or password. Please try again.</p>
+              <p>Incorrect email or password. Please try again.</p>
             )}
             {/* Submit Button */}
             <button

@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router";
 import { shoperyIcons } from "../../data/data";
 import FilterSection from "./FilterSection";
 import "./ShopFilters.css";
@@ -58,7 +58,6 @@ function ShopFilters({
     <aside
       id="shop-filters"
       className="shop-filters"
-      aria-label="Product filters"
     >
       {/* // Filter Section for Categories */}
       <FilterSection
@@ -115,7 +114,6 @@ function ShopFilters({
         >
           <div
             className="shop-filters__price-slider position-relative"
-            role="img"
           >
             <span className="shop-filters__price-track position-absolute" />
             <span className="shop-filters__price-active position-absolute" />
@@ -154,7 +152,6 @@ function ShopFilters({
                   />
                   <span
                     className="shop-filters__stars d-flex align-items-center"
-                    aria-hidden="true"
                   >
                     {Array.from({ length: 5 }, (_, index) => (
                       <RatingIcon
@@ -192,14 +189,13 @@ function ShopFilters({
             to={promotion.to}
           >
             {promotion.cta}
-            <ArrowIcon aria-hidden="true" />
+            <ArrowIcon />
           </Link>
         </div>
       </article>
 
       <section
         className="shop-filters__sale-products"
-        aria-labelledby="shop-sale-products-title"
       >
         <ProductSection title="Sale Products" products={SaleProducts} />
       </section>

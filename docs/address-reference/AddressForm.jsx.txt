@@ -1,0 +1,81 @@
+import { useState } from "react";
+import FormField from "../../../Components/Forms/FormField";
+import { checkoutRegions } from "../../../data/checkoutData";
+
+const fields = [
+  { name: "label", label: "Address label", placeholder: "Home or Work", wide: true },
+  { name: "firstName", label: "First name" },
+  { name: "lastName", label: "Last name" },
+  { name: "company", label: "Company (optional)", optional: true, wide: true },
+  { name: "street", label: "Street address", wide: true },
+  { name: "city", label: "City" },
+  { name: "zipCode", label: "Postal code (optional)", optional: true },
+  { name: "email", label: "Email", type: "email" },
+  { name: "phone", label: "Phone", type: "tel" },
+];
+
+function AddressForm({ address, busy, error, onSave, onCancel }) {
+  const [values, setValues] = useState(() => Object.fromEntries(
+    [...fields.map((field) => field.name), "country", "state"].map((name) => [name, address[name] ?? ""]),
+  ));
+  const [validation, setValidation] = useState("");
+  const regions = checkoutRegions.find((region) => region.country === values.country)?.states ?? [];
+
+  function change(name, value) {
+    setValidation("");
+    setValues((current) => ({ ...current, [name]: value, ...(name === "country" ? { state: "" } : {}) }));
+  }
+
+  function submit(event) {
+    event.preventDefault();
+    const cleaned = Object.fromEntries(Object.entries(values).map(([name, value]) => [name, value.trim()]));
+    if (fields.some((field) => !field.optional && !cleaned[field.name]) || !cleaned.country || !cleaned.state) {
+      setValidation("Please complete all required fields.");
+      return;
+    }
+    onSave(cleaned);
+  }
+
+  return (
+    <>
+      <div className="modal-backdrop show" />
+      <div className="account-address__modal modal d-block" onClick={(event) => { if (event.target === event.currentTarget && !busy) onCancel(); }}>
+        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div className="account-address__modal-content modal-content">
+            <div className="modal-header gap-3">
+              <div>
+                <h2 className="account-address__modal-title">{address.id ? "Edit address" : "New Shipping Address"}</h2>
+                <p className="account-address__hint mt-2">Save an address for your order delivery.</p>
+              </div>
+              <button className="account-address__text-button ms-auto" type="button" disabled={busy} onClick={onCancel}>Close</button>
+            </div>
+            <div className="modal-body">
+              <form id="account-address-form" onSubmit={submit}>
+                <fieldset disabled={busy}>
+                  <div className="row g-3">
+                    {fields.map((field) => <FormField key={field.name} className={field.wide ? "col-12" : "col-12 col-sm-6"} id={`address-${field.name}`} label={field.label} type={field.type ?? "text"} placeholder={field.placeholder ?? field.label} value={values[field.name]} onChange={(event) => change(field.name, event.target.value)} required={!field.optional} />)}
+                    <FormField className="col-12 col-sm-6" as="select" id="address-country" label="Country" value={values.country} onChange={(event) => change("country", event.target.value)} required>
+                      <option value="">Select country</option>
+                      {checkoutRegions.map((region) => <option key={region.country}>{region.country}</option>)}
+                    </FormField>
+                    <FormField className="col-12 col-sm-6" as="select" id="address-state" label="State / Region" value={values.state} onChange={(event) => change("state", event.target.value)} disabled={!values.country} required>
+                      <option value="">Select region</option>
+                      {regions.map((region) => <option key={region}>{region}</option>)}
+                    </FormField>
+                  </div>
+                </fieldset>
+                {(validation || error) && <p className="account-address__error mt-3">{validation || error}</p>}
+              </form>
+            </div>
+            <div className="modal-footer">
+              <button className="account-address__button" type="button" disabled={busy} onClick={onCancel}>Cancel</button>
+              <button className="account-address__button account-address__button--primary" type="submit" form="account-address-form" disabled={busy}>{busy ? "Saving..." : "Save Address"}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default AddressForm;

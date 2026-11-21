@@ -49,15 +49,14 @@ function WishlistProductRow({ product }) {
 
       <div className="wishlist-product-row__actions">
         <button className="wishlist-add-button" type="button">
-          <CartIcon aria-hidden="true" />
+          <CartIcon />
           <span>Add to Cart</span>
         </button>
         <button
           className="wishlist-remove-button"
           type="button"
-          aria-label={`Remove ${product.name} from wishlist`}
         >
-          <RemoveIcon aria-hidden="true" />
+          <RemoveIcon />
         </button>
       </div>
     </article>
@@ -81,9 +80,8 @@ function WishlistShare() {
             key={name}
             className="wishlist-share__icon"
             type="button"
-            aria-label={`Share on ${name}`}
           >
-            <Icon aria-hidden="true" />
+            <Icon />
           </button>
         ))}
       </div>
@@ -93,8 +91,8 @@ function WishlistShare() {
 
 function WishlistTable({ products }) {
   return (
-    <section className="wishlist-table" aria-label="Wishlist products">
-      <div className="wishlist-table__header" aria-hidden="true">
+    <section className="wishlist-table">
+      <div className="wishlist-table__header">
         <span>Product</span>
         <span>Price</span>
         <span>Stock Status</span>
@@ -116,11 +114,11 @@ function Wishlist() {
 
   return (
     <main className="wishlist-page">
-      <section className="wishlist-breadcrumb" aria-label="Breadcrumb">
+      <section className="wishlist-breadcrumb">
         <div className="container wishlist-breadcrumb__content">
-          <nav className="wishlist-breadcrumb__nav" aria-label="Breadcrumb">
+          <nav className="wishlist-breadcrumb__nav">
             <a href="/">Home</a>
-            <BreadcrumbIcon aria-hidden="true" />
+            <BreadcrumbIcon />
             <span>Wishlist</span>
           </nav>
         </div>
@@ -128,7 +126,7 @@ function Wishlist() {
 
       <section className="wishlist-content container">
         <h1 className="wishlist-title">
-          <span className="wishlist-title__icon" aria-hidden="true">
+          <span className="wishlist-title__icon">
             <HeartIcon />
           </span>
           My Wishlist

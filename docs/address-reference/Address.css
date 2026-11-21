@@ -1,0 +1,41 @@
+.account-address { font-size: var(--font-size-sm); }
+.account-address__title { font-size: var(--font-size-h6); }
+.account-address__card,
+.account-address__empty {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-page);
+}
+.account-address__card-title,
+.account-address__empty-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+.account-address__name { color: var(--color-text-strong); font-weight: var(--font-weight-medium); }
+.account-address__button {
+  min-height: var(--button-height-sm);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  color: var(--color-primary-hover);
+  background-color: var(--color-bg-page);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+.account-address__button:hover { background-color: var(--color-primary-light); }
+.account-address__button--primary { color: var(--color-text-inverse); background-color: var(--color-primary); }
+.account-address__button--primary:hover { background-color: var(--color-primary-hover); }
+.account-address__text-button { padding: 0; color: var(--color-text-default); }
+.account-address__text-button:hover { color: var(--color-primary-hover); text-decoration: underline; }
+.account-address__button:disabled,
+.account-address__text-button:disabled { opacity: .6; cursor: wait; }
+.account-address__default { padding: var(--space-1) var(--space-2); color: var(--color-primary-hover); background-color: var(--color-primary-light); border-radius: var(--radius-sm); }
+.account-address__success { color: var(--color-primary-hover); }
+.account-address__error { color: var(--color-danger); }
+.account-address__confirm { border-top: 1px solid var(--color-border-light); }
+.account-address__modal { font-size: var(--font-size-sm); }
+.account-address__modal-content { border-color: var(--color-border-light); border-radius: var(--radius-lg); }
+.account-address__modal-title { font-size: var(--font-size-xl); }
+.account-address__hint { font-size: var(--font-size-sm); }
+.account-address__modal .form-control,
+.account-address__modal .form-select { border-color: var(--color-border-default); color: var(--color-text-default); }

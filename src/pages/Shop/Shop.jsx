@@ -8,7 +8,7 @@ import {
 } from "../../data/mockShopFilters";
 import ProductShowcase from "../../Components/ProductShowcase/ProductShowcase";
 import "./Shop.css";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router";
 
 function Shop() {
 
@@ -72,10 +72,8 @@ const filtersProducts = products.filter((prod) => {
               className={`shop-filters-panel offcanvas-lg offcanvas-start${
                 isFiltersOpen ? " show" : ""
               }`} 
-              // tabIndex="-1"
-              // role={isFiltersOpen ? "dialog" : undefined}
-              // aria-modal={isFiltersOpen ? "true" : undefined}
-              // aria-labelledby="shop-filters-panel-title"
+              //
+              //
             >
               <div className="offcanvas-header d-lg-none">
                 <h2
@@ -87,7 +85,6 @@ const filtersProducts = products.filter((prod) => {
                 <button
                   className="btn-close"
                   type="button"
-                  aria-label="Close filters"
                   onClick={closeFilters}
                 />
               </div>
@@ -133,7 +130,6 @@ const filtersProducts = products.filter((prod) => {
         <button
           className="shop-filters-backdrop offcanvas-backdrop fade show d-lg-none"
           type="button"
-          aria-label="Close filters"
           onClick={closeFilters}
         />
       )}

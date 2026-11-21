@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { shoperyIcons } from "../../data/data";
 import "./ProductDetails.css";
 import { useContext, useEffect, useState } from "react";
@@ -59,7 +59,7 @@ if (loading) {
 if (error) {
   return (
     <main className="product-details">
-      <div className="container py-5" role="alert">
+      <div className="container py-5">
         Unable to load product details. Please try again later.
       </div>
     </main>
@@ -72,7 +72,7 @@ if (error) {
 if (!productDetails) {
   return (
     <main className="product-details">
-      <div className="container py-5" role="alert">
+      <div className="container py-5">
         Product not found.
       </div>
     </main>
@@ -108,14 +108,12 @@ const relatedProducts = products
     <main className="product-details">
       <section
         className="product-details__overview container"
-        aria-labelledby="product-details-title"
       >
         <div className="row g-4">
           <div className="col-12 col-lg-6">
             <div className="product-gallery">
               <div
                 className="product-gallery__rail"
-                aria-label="Product images"
               >
                 <div className="product-gallery__thumbnails">
                   {productDetails.images.map((image, index) => (
@@ -129,7 +127,6 @@ const relatedProducts = products
                       }}
                       type="button"
                       key={image}
-                      aria-label={`View product image ${index + 1}`}
                     >
                       <img
                         src={image}
@@ -162,7 +159,6 @@ const relatedProducts = products
                 <div className="product-info__rating-row d-flex flex-wrap align-items-center">
                   <span
                     className="product-info__stars d-flex align-items-center"
-                    aria-label={`Rating ${productDetails.rating} out of 5`}
                   >
                     {Array.from({ length: 5 }, (_, index) => (
                       <RatingIcon
@@ -172,7 +168,6 @@ const relatedProducts = products
                             ? "is-filled"
                             : "is-empty"
                         }
-                        aria-hidden="true"
                       />
                     ))}
                   </span>
@@ -182,7 +177,7 @@ const relatedProducts = products
                       ? " Review"
                       : " Reviews"}
                   </span>
-                  <span className="product-info__separator" aria-hidden="true">
+                  <span className="product-info__separator">
                     •
                   </span>
                   <span className="product-info__sku">
@@ -208,7 +203,7 @@ const relatedProducts = products
                   <div className="product-info__brand d-flex align-items-center">
                     <strong>Brand:</strong>
                     <span className="product-info__brand-mark d-inline-flex align-items-center">
-                      <LeafIcon aria-hidden="true" />
+                      <LeafIcon />
                       <span>{productDetails.brand}</span>
                     </span>
                   </div>
@@ -217,16 +212,16 @@ const relatedProducts = products
                     <strong>Share item:</strong>
                     <span className="product-info__socials d-flex align-items-center">
                       <span className="product-info__social is-active">
-                        <FacebookIcon aria-hidden="true" />
+                        <FacebookIcon />
                       </span>
                       <span className="product-info__social">
-                        <TwitterIcon aria-hidden="true" />
+                        <TwitterIcon />
                       </span>
                       <span className="product-info__social">
-                        <PinterestIcon aria-hidden="true" />
+                        <PinterestIcon />
                       </span>
                       <span className="product-info__social">
-                        <InstagramIcon aria-hidden="true" />
+                        <InstagramIcon />
                       </span>
                     </span>
                   </div>
@@ -244,7 +239,7 @@ const relatedProducts = products
                       setCartCount(cartCount > 1 ? cartCount - 1 : 1);
                     }}
                   >
-                    <MinusIcon aria-hidden="true" />
+                    <MinusIcon />
                   </button>
                   <span>{cartCount}</span>
                   <button
@@ -252,7 +247,7 @@ const relatedProducts = products
                       setCartCount(cartCount + 1);
                     }}
                   >
-                    <PlusIcon aria-hidden="true" />
+                    <PlusIcon />
                   </button>
                 </div>
 
@@ -272,7 +267,7 @@ const relatedProducts = products
                       ? "Add More to Cart"
                       : "Add to Cart"}
                   </span>
-                  <CartIcon aria-hidden="true" />
+                  <CartIcon />
                 </button>
 
                 <button
@@ -286,7 +281,7 @@ const relatedProducts = products
                     toggleFavorite(productDetails.id)
                   }}
                 >
-                  <WishlistIcon aria-hidden="true" />
+                  <WishlistIcon />
                 </button>
               </div>
 
@@ -314,10 +309,9 @@ const relatedProducts = products
         </div>
       </section>
 
-      {/* <section className="product-description" aria-label="Product information">
+      {/* <section className="product-description">
         <nav
           className="product-description__tabs"
-          aria-label="Product detail sections"
         >
           <button className="is-active" type="button">
             Descriptions
@@ -334,19 +328,19 @@ const relatedProducts = products
 
             <ul className="product-description__features">
               <li>
-                <CheckIcon aria-hidden="true" />
+                <CheckIcon />
                 Fresh organic apples selected for consistent color and texture.
               </li>
               <li>
-                <CheckIcon aria-hidden="true" />
+                <CheckIcon />
                 Bright tart flavor for snacking, salads, baking, and juices.
               </li>
               <li>
-                <CheckIcon aria-hidden="true" />
+                <CheckIcon />
                 Packed with care to help preserve natural freshness.
               </li>
               <li>
-                <CheckIcon aria-hidden="true" />
+                <CheckIcon />
                 One kilogram of quality fruit from Shopery Organics.
               </li>
             </ul>
@@ -363,14 +357,14 @@ const relatedProducts = products
                 src="/images/delivery-man-box-vegetables-02.png"
                 alt="Fresh organic groceries prepared for delivery"
               />
-              <span className="product-description__play" aria-hidden="true">
+              <span className="product-description__play">
                 <PlayIcon />
               </span>
             </div>
 
             <div className="product-description__benefits d-flex">
               <div className="product-description__benefit d-flex align-items-center">
-                <TagIcon aria-hidden="true" />
+                <TagIcon />
                 <span>
                   <strong>{productDetails.discountPercentage}% Discount</strong>
                   <small>
@@ -379,7 +373,7 @@ const relatedProducts = products
                 </span>
               </div>
               <div className="product-description__benefit d-flex align-items-center">
-                <LeafIcon aria-hidden="true" />
+                <LeafIcon />
                 <span>
                   <strong>100% Organic</strong>
                   <small>100% Organic fresh fruit</small>

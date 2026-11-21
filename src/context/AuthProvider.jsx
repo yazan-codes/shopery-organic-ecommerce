@@ -1,6 +1,6 @@
 import {  useState } from "react";
 import { AuthContext } from "./Context";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 function AuthProvider({ children }) {
 

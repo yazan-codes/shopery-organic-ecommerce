@@ -1,0 +1,71 @@
+.account-orders__title {
+  font-size: var(--font-size-h6);
+}
+
+.account-orders__table {
+  --bs-table-color: var(--color-text-muted);
+  --bs-table-bg: var(--color-bg-page);
+  --bs-table-border-color: var(--color-border-light);
+  font-size: var(--font-size-sm);
+}
+
+.account-orders__table > :not(caption) > * > * {
+  padding: var(--space-5) var(--space-4);
+  white-space: nowrap;
+}
+
+.account-orders__table > thead > tr > th {
+  padding-block: var(--space-3);
+  color: var(--color-text-muted);
+  background-color: var(--color-bg-soft-green);
+  border-bottom: 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.account-orders__image {
+  width: var(--space-12);
+  height: var(--space-12);
+  object-fit: contain;
+}
+
+.account-orders__product {
+  color: var(--color-text-strong);
+  font-weight: var(--font-weight-medium);
+}
+
+.account-orders__size {
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-xs);
+}
+
+.account-orders__status {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.account-orders__status--processing {
+  color: var(--color-text-strong);
+  background-color: var(--color-warning);
+}
+
+.account-orders__status--completed {
+  color: var(--color-text-inverse);
+  background-color: var(--color-primary-hover);
+}
+
+.account-orders__status--cancelled {
+  color: var(--color-text-inverse);
+  background-color: var(--color-danger);
+}
+
+.account-orders__details-link {
+  color: var(--color-primary-hover);
+  font-weight: var(--font-weight-medium);
+}
+
+.account-orders__details-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}

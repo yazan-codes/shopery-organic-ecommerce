@@ -1,0 +1,102 @@
+.order-details {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  font-size: var(--font-size-sm);
+}
+
+.order-details__header,
+.order-details__card-title {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.order-details__title {
+  font-size: var(--font-size-xl);
+}
+
+.order-details__meta,
+.order-details__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-subtle);
+}
+
+.order-details__card {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+.order-details__card-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+
+.order-details__name {
+  color: var(--color-text-strong);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.order-details__totals dt {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-regular);
+}
+
+.order-details__totals dd {
+  margin: 0;
+  color: var(--color-text-strong);
+}
+
+.order-details__totals > div + div {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.order-details__total dd {
+  color: var(--color-primary-hover);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.order-details__stage {
+  position: relative;
+  flex-basis: 0;
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-xs);
+}
+
+.order-details__stage + .order-details__stage::before {
+  content: "";
+  position: absolute;
+  top: var(--space-5);
+  right: 50%;
+  width: 100%;
+  height: var(--space-1);
+  background-color: var(--color-border-light);
+}
+
+.order-details__step {
+  position: relative;
+  z-index: 1;
+  width: var(--space-10);
+  height: var(--space-10);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-circle);
+  background-color: var(--color-bg-page);
+}
+
+.order-details__stage--complete {
+  color: var(--color-primary-hover);
+}
+
+.order-details__stage--complete .order-details__step,
+.order-details__stage--complete + .order-details__stage--complete::before {
+  color: var(--color-text-inverse);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.order-details__cancelled {
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+}

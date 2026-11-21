@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { shoperyIcons } from "../../data/data";
 import "./WishlistPage.css";
 import { Category_Product_Context } from "../../context/Context";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 
 
@@ -44,7 +44,6 @@ function WishlistProductRow({ product }) {
         <div className="wishlist-view__price d-flex align-items-center flex-wrap">
           {product.discountPercentage ? (
             <>
-              <span className="visually-hidden">Original price:</span>
               <span>{discountedPrice.toFixed(2)}</span>
               <del>{product.price}</del>
             </>
@@ -81,7 +80,7 @@ function WishlistProductRow({ product }) {
             type="button"
             onClick={() => RemoveFromFavorites(product.id)}
           >
-            <RemoveIcon aria-hidden="true" />
+            <RemoveIcon />
           </button>
         </div>
       </td>
@@ -99,9 +98,9 @@ function WishlistProductRow({ product }) {
 //             key={name}
 //             className={`wishlist-view__social d-inline-flex align-items-center justify-content-center rounded-circle p-0${active ? " wishlist-view__social--active" : ""}`}
 //             type="button"
-//             aria-label={`Share on ${name}`}
+//
 //           >
-//             <Icon aria-hidden="true" />
+//             <Icon />
 //           </button>
 //         ))}
 //       </div>
@@ -131,7 +130,6 @@ function WishlistTable() {
                 Stock Status
               </th>
               <th className="wishlist-view__actions-col" scope="col">
-                <span className="visually-hidden">Actions</span>
               </th>
             </tr>
           </thead>
@@ -156,7 +154,6 @@ export default function WishlistPage() {
     <main className="wishlist-view">
       <section
         className="wishlist-view__content container"
-        aria-labelledby="wishlist-title"
       >
         <h1 id="wishlist-title" className="wishlist-view__title text-center">
           My Wishlist

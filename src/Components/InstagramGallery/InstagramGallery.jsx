@@ -44,7 +44,7 @@ const instagramPosts = [
 
 function InstagramGallery() {
   return (
-    <section className="instagram-gallery" aria-labelledby="instagram-title">
+    <section className="instagram-gallery">
       <div className="container ">
         <h2 id="instagram-title" className="instagram-gallery__title">
           Follow us on Instagram
@@ -67,7 +67,6 @@ function InstagramGallery() {
 
                   <span
                     className="instagram-gallery__overlay"
-                    aria-hidden="true"
                   >
                     <span className="instagram-gallery__icon">
                       <InstagramIcon />

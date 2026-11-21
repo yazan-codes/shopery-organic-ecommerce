@@ -48,7 +48,7 @@ const companyLogos = [
 
 function CompanyLogos() {
   return (
-    <section className="company-logos" aria-label="Partner companies">
+    <section className="company-logos">
       <div className="container company-logos__inner">
         <div className=" row row-cols-2 row-cols-sm-3 row-cols-lg-6 g-5">
           {companyLogos.map((logo, index) => (
@@ -70,7 +70,7 @@ function CompanyLogos() {
               </div>
 
               {index < companyLogos.length - 1 && (
-                <span className="company-logos__separator" aria-hidden="true" />
+                <span className="company-logos__separator" />
               )}
             </div>
           ))}

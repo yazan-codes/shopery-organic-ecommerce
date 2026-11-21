@@ -1,4 +1,4 @@
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router";
 import {
   blogCategories,
   blogGallery,
@@ -32,13 +32,10 @@ export default function BlogSidebar() {
     navigate(`/blog?${next.toString()}`);
   }
   return (
-    <aside className="blog-sidebar" aria-label="Blog sidebar">
-      <form className="blog-sidebar__search" onSubmit={search} role="search">
-        <label className="visually-hidden" htmlFor="blog-search">
-          Search articles
-        </label>
-        <button type="submit" aria-label="Search articles">
-          <SearchIcon aria-hidden="true" />
+    <aside className="blog-sidebar">
+      <form className="blog-sidebar__search" onSubmit={search}>
+        <button type="submit">
+          <SearchIcon />
         </button>
         <input
           key={params.get("query") || "all"}
@@ -56,7 +53,7 @@ export default function BlogSidebar() {
             <li key={category}>
               <Link
                 to={filterLink("category", category)}
-                aria-current={
+                data-current={
                   params.get("category") === category ? "true" : undefined
                 }
               >
@@ -81,7 +78,7 @@ export default function BlogSidebar() {
             <Link
               key={tag}
               to={filterLink("tag", tag)}
-              aria-current={params.get("tag") === tag ? "true" : undefined}
+              data-current={params.get("tag") === tag ? "true" : undefined}
             >
               {tag}
             </Link>
@@ -113,7 +110,7 @@ export default function BlogSidebar() {
                 <div>
                   <h3>{post.title}</h3>
                   <time dateTime={post.date}>
-                    <CalendarIcon aria-hidden="true" />
+                    <CalendarIcon />
                     {formatBlogDate(post.date)}
                   </time>
                 </div>

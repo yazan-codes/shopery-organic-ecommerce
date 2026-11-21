@@ -32,7 +32,6 @@ function ClientTestimonials({
   return (
     <section
       className="client-testimonials"
-      aria-labelledby="client-testimonials-title"
     >
       <div className="container client-testimonials__container">
         <header className="client-testimonials__header d-flex align-items-center justify-content-between">
@@ -49,28 +48,25 @@ function ClientTestimonials({
 
           <div
             className="client-testimonials__controls d-flex"
-            aria-label="Testimonial navigation"
           >
             <button
               className="client-testimonials__arrow"
               type="button"
               onClick={showPreviousSlide}
-              aria-label="Show previous testimonials"
             >
-              <PreviousIcon aria-hidden="true" />
+              <PreviousIcon />
             </button>
             <button
               className="client-testimonials__arrow"
               type="button"
               onClick={showNextSlide}
-              aria-label="Show next testimonials"
             >
-              <NextIcon aria-hidden="true" />
+              <NextIcon />
             </button>
           </div>
         </header>
 
-        <div className="client-testimonials__cards row g-4" aria-live="polite">
+        <div className="client-testimonials__cards row g-4">
           {slides[activeSlide].map((testimonial) => (
             <div
               className="client-testimonials__item col-12 col-md-6 col-xl-4"
@@ -84,7 +80,6 @@ function ClientTestimonials({
         
           <div
             className="client-testimonials__tracker d-flex justify-content-center"
-            aria-label="Choose testimonial slide"
           >
             {slides.map((slide, index) => (
               <button
@@ -93,8 +88,7 @@ function ClientTestimonials({
                 }`}
                 type="button"
                 onClick={() => setActiveSlide(index)}
-                aria-label={`Show testimonial slide ${index + 1}`}
-                aria-current={index === activeSlide ? "true" : undefined}
+                data-current={index === activeSlide ? "true" : undefined}
                 key={slide[0]?.id ?? index}
               />
             ))}

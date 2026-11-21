@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router";
 import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import BlogMeta from "../../Components/Blog/BlogMeta";
 import BlogSidebar from "../../Components/Blog/BlogSidebar";
@@ -88,13 +88,12 @@ function BlogDetails() {
               </div>
               <aside
                 className="blog-article__promotion d-flex align-items-center"
-                aria-label="Summer fruit sale"
               >
                 <div>
                   <p>Summer Sales</p>
                   <h2>Fresh Fruit</h2>
                   <Link className="shopery-button" to="/shop">
-                    Shop Now <ArrowIcon aria-hidden="true" />
+                    Shop Now <ArrowIcon />
                   </Link>
                 </div>
                 <div className="blog-article__discount">

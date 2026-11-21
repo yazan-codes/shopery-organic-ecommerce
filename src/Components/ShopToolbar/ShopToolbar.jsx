@@ -17,9 +17,6 @@ function ShopToolbar({
   return (
     <section
       className="shop-toolbar"
-      aria-label={
-        variant === "blog" ? "Blog controls" : "Shop product controls"
-      }
     >
       <div className="row gx-4 gy-3 align-items-center">
         <div
@@ -31,7 +28,7 @@ function ShopToolbar({
             onClick={onFilterClick}
           >
             <span>Filter</span>
-            <FilterControlsIcon aria-hidden="true" />
+            <FilterControlsIcon />
           </button>
         </div>
 
@@ -58,7 +55,6 @@ function ShopToolbar({
                 </select>
                 <DropdownIcon
                   className="shop-toolbar__select-icon position-absolute"
-                  aria-hidden="true"
                 />
               </span>
             </div>

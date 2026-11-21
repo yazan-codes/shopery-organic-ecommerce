@@ -1,0 +1,25 @@
+.account-layout {
+  padding-block: var(--space-6) var(--space-10);
+  color: var(--color-text-default);
+  background-color: var(--color-bg-page);
+}
+
+/* .account-layout__container {
+  max-width: var(--container-width);
+} */
+
+.account-layout__content {
+  min-width: 0;
+}
+
+@media (min-width: 992px) {
+  .account-layout {
+    padding-block: var(--space-8) var(--space-15);
+  }
+}
+
+@media (min-width: 1400px) {
+  .account-layout__container {
+    padding-inline: 0;
+  }
+}

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
 import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import FormField from "../../Components/Forms/FormField";
 import { shoperyIcons } from "../../data/data";
@@ -12,7 +12,8 @@ function Register() {
 
   let [registerData,setRegisterData] = useState(() => ({
     id:uuidv4(),
-    name:"",
+    firstName:"",
+    lastName:"",
     email:"",
     password:"",
     confirmPassword:""
@@ -50,7 +51,7 @@ function Register() {
 
 
 
-  async function register({id,name,email,password}) {
+  async function register({id,firstName,lastName,email,password}) {
     if (submitting.current) return;
     submitting.current = true;
     setloadingRegister(true);
@@ -79,7 +80,8 @@ function Register() {
         },
         body: JSON.stringify({
           id: id,
-          name: name,
+          firstName: firstName,
+          lastName: lastName,
           email: email,
           password: password,
         }),
@@ -94,7 +96,14 @@ function Register() {
       }
 
       setRegisterSuccess(true);
-      setRegisterData({ id: uuidv4(), name: "", email: "", password: "", confirmPassword: "" });
+      setRegisterData({
+        id: uuidv4(),
+        firstName,
+        lastName,
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
       setAcceptedTerms(false);
       setisFieldsComplete(false);
       navigate("/login")
@@ -117,7 +126,7 @@ function Register() {
         !registerData.password || !registerData.confirmPassword ||
         !acceptedTerms || registerData.password !== registerData.confirmPassword) return;
 
-    register({ ...registerData, name: registerData.name.trim(), email: registerData.email.trim() });
+    register({ ...registerData,firstName : registerData.name.trim(),lastName: registerData.lastName.trim(), email: registerData.email.trim() });
   }
 
     return (
@@ -129,10 +138,7 @@ function Register() {
               { label: "Create Account" },
             ]}
           />
-          <section
-            className="register-page__content container d-flex justify-content-center"
-            aria-labelledby="register-title"
-          >
+          <section className="register-page__content container d-flex justify-content-center">
             <form
               className="register-panel w-100"
               onSubmit={(e) => {
@@ -152,17 +158,43 @@ function Register() {
                     label="Name"
                     hideLabel
                     type="text"
-                    placeholder="Name"
-                    autoComplete="name"
+                    placeholder="First Name"
+                    autoComplete="firstName"
                     value={registerData.name}
                     disabled={loadingRegister}
-                    aria-invalid={nameMissing}
-                    aria-describedby={nameMissing ? "register-name-error" : undefined}
-                    onChange={(e) => handleChange("name", e.target.value)}
+                    data-invalid={nameMissing}
+                    onChange={(e) => handleChange("firstName", e.target.value)}
                   />
 
                   {nameMissing && (
-                    <p id="register-name-error" className="register-panel__error" role="alert">Please enter your name.</p>
+                    <p
+                      id="register-name-error"
+                      className="register-panel__error"
+                    >
+                      Please enter your First Name.
+                    </p>
+                  )}
+                </div>
+                <div className="register-panel__field register-panel__field--name position-relative">
+                  <FormField
+                    id="register-name"
+                    label="Name"
+                    hideLabel
+                    type="text"
+                    placeholder="Last Name"
+                    autoComplete="lastName"
+                    value={registerData.lastName}
+                    disabled={loadingRegister}
+                    data-invalid={nameMissing}
+                    onChange={(e) => handleChange("lastName", e.target.value)}
+                  />
+                  {nameMissing && (
+                    <p
+                      id="register-name-error"
+                      className="register-panel__error"
+                    >
+                      Please enter your Last Name.
+                    </p>
                   )}
                 </div>
                 <div className="register-panel__field position-relative">
@@ -175,13 +207,17 @@ function Register() {
                     autoComplete="email"
                     value={registerData.email}
                     disabled={loadingRegister}
-                    aria-invalid={emailMissing || DuplicateAcount}
-                    aria-describedby={emailMissing || DuplicateAcount ? "register-email-error" : undefined}
+                    data-invalid={emailMissing || DuplicateAcount}
                     onChange={(e) => handleChange("email", e.target.value)}
                   />
                   {(emailMissing || DuplicateAcount) && (
-                    <p id="register-email-error" className="register-panel__error" role="alert">
-                      {emailMissing ? "Please enter your email." : "This email is already registered. Use another email or log in."}
+                    <p
+                      id="register-email-error"
+                      className="register-panel__error"
+                    >
+                      {emailMissing
+                        ? "Please enter your email."
+                        : "This email is already registered. Use another email or log in."}
                     </p>
                   )}
                 </div>
@@ -195,19 +231,22 @@ function Register() {
                     autoComplete="new-password"
                     value={registerData.password}
                     disabled={loadingRegister}
-                    aria-invalid={passwordMissing}
-                    aria-describedby={passwordMissing ? "register-password-error" : undefined}
+                    data-invalid={passwordMissing}
                     onChange={(e) => handleChange("password", e.target.value)}
                   />
                   <button
                     type="button"
                     className="register-panel__eye position-absolute d-inline-flex align-items-center justify-content-center p-0"
-                    aria-label="Show password"
                   >
-                    <EyeIcon aria-hidden="true" />
+                    <EyeIcon />
                   </button>
                   {passwordMissing && (
-                    <p id="register-password-error" className="register-panel__error" role="alert">Please enter your password.</p>
+                    <p
+                      id="register-password-error"
+                      className="register-panel__error"
+                    >
+                      Please enter your password.
+                    </p>
                   )}
                 </div>
                 <div className="register-panel__field register-panel__field--password position-relative">
@@ -220,8 +259,9 @@ function Register() {
                     autoComplete="new-password"
                     value={registerData.confirmPassword}
                     disabled={loadingRegister}
-                    aria-invalid={Boolean(confirmPasswordMissing || passwordMismatch)}
-                    aria-describedby={confirmPasswordMissing || passwordMismatch ? "register-confirm-password-error" : undefined}
+                    data-invalid={Boolean(
+                      confirmPasswordMissing || passwordMismatch,
+                    )}
                     onChange={(e) =>
                       handleChange("confirmPassword", e.target.value)
                     }
@@ -229,13 +269,17 @@ function Register() {
                   <button
                     type="button"
                     className="register-panel__eye position-absolute d-inline-flex align-items-center justify-content-center p-0"
-                    aria-label="Show confirm password"
                   >
-                    <EyeIcon aria-hidden="true" />
+                    <EyeIcon />
                   </button>
                   {(confirmPasswordMissing || passwordMismatch) && (
-                    <p id="register-confirm-password-error" className="register-panel__error" role="alert">
-                      {confirmPasswordMissing ? "Please confirm your password." : "Passwords do not match."}
+                    <p
+                      id="register-confirm-password-error"
+                      className="register-panel__error"
+                    >
+                      {confirmPasswordMissing
+                        ? "Please confirm your password."
+                        : "Passwords do not match."}
                     </p>
                   )}
                 </div>
@@ -249,8 +293,7 @@ function Register() {
                     type="checkbox"
                     checked={acceptedTerms}
                     disabled={loadingRegister}
-                    aria-invalid={termsMissing}
-                    aria-describedby={termsMissing ? "register-terms-error" : undefined}
+                    data-invalid={termsMissing}
                     onChange={(e) => setAcceptedTerms(e.target.checked)}
                   />
                   <label
@@ -260,18 +303,25 @@ function Register() {
                     Accept all terms &amp; Conditions
                   </label>
                   {termsMissing && (
-                    <p id="register-terms-error" className="register-panel__error" role="alert">Please accept the terms and conditions.</p>
+                    <p
+                      id="register-terms-error"
+                      className="register-panel__error"
+                    >
+                      Please accept the terms and conditions.
+                    </p>
                   )}
                 </div>
               </div>
               {errorServerRegister && (
-                <p className="register-panel__error mb-3" role="alert">
-                  We could not complete registration. Please check your connection and try again.
+                <p className="register-panel__error mb-3">
+                  We could not complete registration. Please check your
+                  connection and try again.
                 </p>
               )}
               {registerSuccess && (
-                <p className="mb-3" role="status">
-                  Account created successfully. <Link to="/login">Log in to your account.</Link>
+                <p className="mb-3">
+                  Account created successfully.{" "}
+                  <Link to="/login">Log in to your account.</Link>
                 </p>
               )}
               <button
@@ -279,9 +329,7 @@ function Register() {
                 type="submit"
                 disabled={loadingRegister}
               >
-                {loadingRegister
-                  ? "Creating account..."
-                  : "Create Account"}
+                {loadingRegister ? "Creating account..." : "Create Account"}
               </button>
               <p className="register-panel__switch text-center">
                 Already have account <Link to="/login">Login</Link>

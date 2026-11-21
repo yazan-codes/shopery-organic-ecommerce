@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { shoperyIcons } from "../../data/data";
 import "./Navigation.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
 import { AuthContext, Category_Product_Context } from "../../context/Context";
 
 function NavbarTwo() {
@@ -37,31 +37,28 @@ function NavbarTwo() {
    let { cartItems, favoriteProducts } = useContext(Category_Product_Context);
 
   return (
-    <nav className="navbar-two" aria-label="Main navigation">
+    <nav className="navbar-two">
       <div className="container d-flex align-items-center justify-content-between gap-2 gap-sm-4">
         <Link
           className="navbar-two__brand d-flex align-items-center gap-2"
           to="/"
         >
-          <LeafIcon className="navbar-two__brand-icon" aria-hidden="true" />
+          <LeafIcon className="navbar-two__brand-icon" />
           <span className="navbar-two__brand-name">Shopery</span>
         </Link>
         <form
           className="navbar-two__search input-group d-none d-lg-flex"
-          role="search"
         >
           <input
             className="form-control navbar-two__search-input"
             type="search"
             placeholder="Search"
-            aria-label="Search"
           />
           <button
             className="navbar-two__search-button"
             type="submit"
-            aria-label="Submit search"
           >
-            <SearchIcon aria-hidden="true" />
+            <SearchIcon />
           </button>
         </form>
         <div className="navbar-two__tools d-flex flex-row align-items-center gap-2 gap-sm-3">
@@ -70,10 +67,9 @@ function NavbarTwo() {
               <button
                 className="navbar-two__icon-button"
                 type="button"
-                aria-label="Wishlist"
               >
                 {/*  asdasDASDsaSAdasDSA */}
-                <WishlistIcon aria-hidden="true" />
+                <WishlistIcon />
                 <span className="navbar-two__badge">
                   {favoriteProducts ? favoriteProducts.length : 0}
                 </span>
@@ -87,14 +83,12 @@ function NavbarTwo() {
                 >
                   <Account
                     className="navbar-two__account-icon"
-                    aria-hidden="true"
                   />
                   <span className="navbar-two__account-name d-none d-sm-inline">
-                    Hi, {user.name || "customer"}
+                    Hi, {user.firstName || "customer"}
                   </span>
                   <AccountChevron
                     className="navbar-two__account-chevron d-none d-sm-block"
-                    aria-hidden="true"
                   />
                 </summary>
                 <div className="navbar-two__account-menu">
@@ -102,7 +96,7 @@ function NavbarTwo() {
                     to={`/account/${user.id}`}
                     className="navbar-two__account-item d-flex align-items-center gap-2"
                   >
-                    <Account aria-hidden="true" />
+                    <Account />
                     <span>My Account</span>
                   </Link>
                   <div className="navbar-two__account-separator" />
@@ -112,7 +106,7 @@ function NavbarTwo() {
                     type="button"
                     onClick={handleLogout}
                   >
-                    <LogoutIcon aria-hidden="true" />
+                    <LogoutIcon />
                     <span>Log out</span>
                   </button>
                 </div>
@@ -121,27 +115,23 @@ function NavbarTwo() {
               <Link
                 to="/login"
                 className="navbar-two__sign-in d-flex align-items-center gap-2"
-                aria-label="Sign In"
               >
                 <Account
                   className="navbar-two__account-icon"
-                  aria-hidden="true"
                 />
                 <span className="d-none d-sm-inline">Sign In</span>
               </Link>
             )}
             <span
               className="navbar-two__divider d-none d-sm-block"
-              aria-hidden="true"
             />
             <Link to="/shopping-cart">
               <div className="d-flex gap-3">
                 <button
                   className="navbar-two__icon-button"
                   type="button"
-                  aria-label="Shopping cart"
                 >
-                  <CartIcon aria-hidden="true" />
+                  <CartIcon />
                   <span className="navbar-two__badge">
                     {cartItems ? cartItems.length : 0}
                   </span>
@@ -157,12 +147,9 @@ function NavbarTwo() {
           <button
             className="navbar-two__mobile-trigger d-lg-none"
             type="button"
-            aria-expanded={isDrawerOpen}
-            aria-controls="navbar-two-mobile-drawer"
-            aria-label={isDrawerOpen ? "Close mobile menu" : "Open mobile menu"}
             onClick={() => setIsDrawerOpen(!isDrawerOpen)}
           >
-            <MenuIcon aria-hidden="true" />
+            <MenuIcon />
           </button>
         </div>
       </div>
@@ -182,7 +169,6 @@ function NavbarTwo() {
                       <span>{link.name}</span>
                       {/* <DropdownIcon
                         className="navbar-two__menu-arrow"
-                        aria-hidden="true"
                       /> */}
                     </Link>
                   </li>
@@ -193,58 +179,51 @@ function NavbarTwo() {
               className="navbar-two__phone d-none d-lg-flex align-items-center gap-2"
               href="tel:+12195550114"
             >
-              <PhoneIcon aria-hidden="true" />
+              <PhoneIcon />
               <span>(219) 555-0114</span>
             </Link>
           </div>
         </div>
       </div>
-
+      
+        {/* nav on phone */}
       <div
         className={`navbar-two__drawer-overlay ${isDrawerOpen ? "is-open" : ""}`}
-        aria-hidden="true"
         onClick={() => setIsDrawerOpen(false)}
       />
 
       <aside
         id="navbar-two-mobile-drawer"
         className={`navbar-two__drawer ${isDrawerOpen ? "is-open" : ""}`}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile navigation"
-        aria-hidden={!isDrawerOpen}
       >
         <div className="navbar-two__drawer-header d-flex align-items-center justify-content-between gap-3">
           <Link
             className="navbar-two__brand d-flex align-items-center gap-2"
             to="/"
           >
-            <LeafIcon className="navbar-two__brand-icon" aria-hidden="true" />
+            <LeafIcon className="navbar-two__brand-icon" />
             <span className="navbar-two__brand-name">Shopery</span>
           </Link>
           <button
             className="navbar-two__drawer-close"
             type="button"
-            aria-label="Close mobile menu"
             onClick={() => setIsDrawerOpen(false)}
           >
-            <CloseIcon aria-hidden="true" />
+            <CloseIcon />
           </button>
         </div>
 
-        <form className="navbar-two__drawer-search input-group" role="search">
+        <form className="navbar-two__drawer-search input-group">
           <input
             className="form-control navbar-two__drawer-search-input"
             type="search"
             placeholder="Search for products"
-            aria-label="Search for products"
           />
           <button
             className="navbar-two__drawer-search-button"
             type="submit"
-            aria-label="Submit search"
           >
-            <SearchIcon aria-hidden="true" />
+            <SearchIcon />
           </button>
         </form>
 
@@ -258,7 +237,7 @@ function NavbarTwo() {
                   onClick={() => setIsDrawerOpen(false)}
                 >
                   <span>{link.name}</span>
-                  {/* <DropdownIcon aria-hidden="true" /> */}
+                  {/* <DropdownIcon /> */}
                 </Link>
               </li>
             );

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router";
 import { shoperyIcons } from "../../data/data";
 import "./ProductCard.css";
 import { useContext } from "react";
@@ -70,19 +70,19 @@ const discountedPrice = price - price * (discountPercentage / 100);
             <button
               className={`product-card__action ${favoriteProducts.includes(id) ? "active" : ""}`}
               type="button"
-              // aria-label={`Add ${title} to wishlist`}
+              //
               onClick={() => {
                 toggleFavorite(id);
               }}
             >
-              <WishlistIcon aria-hidden="true" />
+              <WishlistIcon />
             </button>
             <button
               className="product-card__action"
               type="button"
-              // aria-label={`Quick view ${title}`}
+              //
             >
-              <QuickViewIcon aria-hidden="true" />
+              <QuickViewIcon />
             </button>
           </div>
         </div>
@@ -100,7 +100,6 @@ const discountedPrice = price - price * (discountPercentage / 100);
 
             <div
               className="product-card__price"
-              aria-label={`Price ${formatPrice(price)}`}
             >
               {discountPercentage ? (
                 <>
@@ -114,7 +113,6 @@ const discountedPrice = price - price * (discountPercentage / 100);
 
             <div
               className="product-card__rating"
-              aria-label={`Rating ${rating} out of 5`}
             >
               {Array.from({ length: 5 }, (_, index) => (
                 <RatingIcon
@@ -122,7 +120,6 @@ const discountedPrice = price - price * (discountPercentage / 100);
                   className={
                     index < Math.floor(rating) ? "is-filled" : "is-empty"
                   }
-                  aria-hidden="true"
                 />
               ))}
             </div>
@@ -138,7 +135,7 @@ const discountedPrice = price - price * (discountPercentage / 100);
                 navigate("/shopping-cart");
               }}
             >
-              <CartIcon aria-hidden="true" />
+              <CartIcon />
               <span>View Cart</span>
             </button>
           ) : (
@@ -155,7 +152,7 @@ const discountedPrice = price - price * (discountPercentage / 100);
                 handleAddToCart(product);
               }}
             >
-              <CartIcon aria-hidden="true" />
+              <CartIcon />
             </button>
           )}
         </div>

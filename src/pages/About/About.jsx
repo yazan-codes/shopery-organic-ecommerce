@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Breadcrumb from "../../Components/Breadcrumb/Breadcrumb";
 import ClientTestimonials from "../../Components/ClientTestimonials/ClientTestimonials";
 import CompanyLogos from "../../Components/CompanyLogos/CompanyLogos";
@@ -36,9 +36,8 @@ export default function About() {
       </section>
       <section
         className="about-features"
-        aria-labelledby="about-features-title"
       >
-        <div className="about-features__landscape" aria-hidden="true" />
+        <div className="about-features__landscape" />
         <img
           className="about-features__farmer"
           src="/images/senior-farmer-vegetables.png"
@@ -61,7 +60,7 @@ export default function About() {
                     <li className="col" key={feature.title}>
                       <div className="about-feature d-flex align-items-center">
                         <span className="about-feature__icon">
-                          <Icon aria-hidden="true" />
+                          <Icon />
                         </span>
                         <div>
                           <h3>{feature.title}</h3>
@@ -78,7 +77,6 @@ export default function About() {
       </section>
       <section
         className="about-delivery container"
-        aria-labelledby="about-delivery-title"
       >
         <div className="row g-4 align-items-center">
           <div className="col-12 col-lg-5 about-delivery__copy">
@@ -89,13 +87,13 @@ export default function About() {
             <ul className="list-unstyled">
               {deliveryBenefits.map((benefit) => (
                 <li className="d-flex" key={benefit}>
-                  <CheckIcon aria-hidden="true" />
+                  <CheckIcon />
                   {benefit}
                 </li>
               ))}
             </ul>
             <Link className="shopery-button" to="/shop">
-              Shop Now <ArrowIcon aria-hidden="true" />
+              Shop Now <ArrowIcon />
             </Link>
           </div>
           <div className="col-12 col-lg-7">

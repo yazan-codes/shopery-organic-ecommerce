@@ -8,7 +8,6 @@ function TestimonialCard({ testimonial }) {
     <article className="client-testimonials__card">
       <QuoteIcon
         className="client-testimonials__quote-icon"
-        aria-hidden="true"
       />
 
       <p className="client-testimonials__quote">{testimonial.quote}</p>
@@ -34,7 +33,6 @@ function TestimonialCard({ testimonial }) {
 
         <div
           className="client-testimonials__rating d-flex"
-          aria-label={`Rating ${testimonial.rating} out of 5`}
         >
           {Array.from({ length: 5 }, (_, index) => (
             <RatingIcon
@@ -44,7 +42,6 @@ function TestimonialCard({ testimonial }) {
                   ? "is-filled"
                   : "is-empty"
               }`}
-              aria-hidden="true"
             />
           ))}
         </div>

@@ -36,6 +36,9 @@ import {
   PiLeaf,
   PiPlayFill,
   PiLinkSimple,
+  PiGearSix,
+  PiBell,
+  PiSignOut,
 } from "react-icons/pi";
 
 import {
@@ -59,6 +62,12 @@ export const shoperyIcons = {
   dropdown: PiCaretDown,
   breadcrumbNext: PiCaretRight,
   home: PiHouse,
+
+  // Customer account navigation
+  accountOrders: PiPackage,
+  accountSettings: PiGearSix,
+  accountNotification: PiBell,
+  accountLogout: PiSignOut,
 
   // Product cards
   addToCart: PiShoppingBag,

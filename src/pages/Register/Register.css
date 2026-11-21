@@ -44,7 +44,7 @@
   font-size: var(--font-size-sm);
 }
 
-.register-panel .form-control[aria-invalid="true"] {
+.register-panel .form-control[data-invalid="true"] {
   border-color: var(--color-danger);
 }
 

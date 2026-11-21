@@ -1,0 +1,181 @@
+.account-settings__panel {
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-page);
+}
+
+.account-settings__header {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.account-settings__header h1,
+.account-settings__header h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+.account-settings__body {
+  padding: var(--space-6);
+}
+
+.account-settings__avatar {
+  width: var(--account-settings-avatar-size);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.account-settings .account-settings__button {
+  min-height: var(--button-height-md);
+  padding: var(--space-3) var(--space-8);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+  background-color: var(--color-auth-button);
+}
+
+.account-settings .account-settings__button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.account-settings .account-settings__image-button {
+  color: var(--color-primary);
+  background-color: var(--color-bg-page);
+}
+
+.account-settings .account-settings__image-button:hover {
+  color: var(--color-primary-hover);
+  background-color: var(--color-primary-light);
+}
+
+.account-settings__password .form-control {
+  padding-right: var(--space-12);
+}
+
+.account-settings__error {
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+}
+
+.account-settings .account-settings__field--invalid .form-control {
+  border-color: var(--color-danger);
+}
+
+.account-settings .account-settings__field--invalid .form-control:focus {
+  box-shadow: none;
+}
+
+.account-settings__eye {
+  position: absolute;
+  right: var(--space-2);
+  bottom: var(--space-1);
+  width: var(--button-height-sm);
+  height: var(--button-height-sm);
+  padding: var(--space-2);
+  color: var(--color-text-strong);
+  border-radius: var(--radius-sm);
+}
+
+.account-settings__eye svg {
+  width: var(--space-5);
+  height: var(--space-5);
+}
+
+.account-settings__delete {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.account-settings__delete h2 {
+  font-size: var(--font-size-lg);
+}
+
+.account-settings__delete p {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.account-settings__delete-button {
+  min-height: var(--button-height-md);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-danger);
+  background-color: var(--color-bg-page);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.account-settings__delete-button:hover {
+  color: var(--color-text-inverse);
+  background-color: var(--color-danger);
+}
+
+.account-settings__delete-confirmation {
+  padding: var(--space-6);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-page);
+  box-shadow: var(--shadow-lg);
+}
+
+.account-settings__delete-confirmation h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading);
+}
+
+.account-settings__delete-confirmation-icon {
+  width: var(--space-12);
+  height: var(--space-12);
+  color: var(--color-danger);
+  background-color: var(--color-bg-muted);
+  border-radius: var(--radius-circle);
+}
+
+.account-settings__delete-confirmation-icon svg {
+  width: var(--space-6);
+  height: var(--space-6);
+}
+
+.account-settings__delete-confirmation-description {
+  color: var(--color-text-muted);
+}
+
+.account-settings__delete-confirmation-warning {
+  color: var(--color-danger);
+  font-weight: var(--font-weight-medium);
+}
+
+.account-settings__confirmation-cancel {
+  min-height: var(--button-height-md);
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  color: var(--color-text-default);
+  background-color: var(--color-bg-page);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.account-settings__confirmation-cancel:hover {
+  background-color: var(--color-bg-muted);
+}
+
+.account-settings__delete-button--confirm {
+  color: var(--color-text-inverse);
+  background-color: var(--color-danger);
+}
+
+.account-settings__delete-button--confirm:hover {
+  color: var(--color-danger);
+  background-color: var(--color-bg-page);
+}
+
+.account-settings__eye:focus-visible,
+.account-settings__delete-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: var(--space-1);
+}

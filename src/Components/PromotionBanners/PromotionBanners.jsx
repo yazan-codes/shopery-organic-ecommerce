@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { shoperyIcons } from "../../data/data";
 import { promotionBanners } from "../../data/mockPromotionBanners";
 import "./PromotionBanners.css";
@@ -9,9 +9,6 @@ function PromotionBannerDetail({ detail }) {
     return (
       <div
         className="promotion-banner__countdown d-flex justify-content-center"
-        aria-label={detail.items
-          .map((item) => `${item.value} ${item.label}`)
-          .join(", ")}
       >
         {detail.items.map((item, index) => (
           <Fragment key={item.label}>
@@ -26,7 +23,6 @@ function PromotionBannerDetail({ detail }) {
             {index < detail.items.length - 1 && (
               <span
                 className="promotion-banner__countdown-separator"
-                aria-hidden="true"
               >
                 :
               </span>
@@ -77,10 +73,9 @@ function PromotionBanner({ banner }) {
         <Link
           className="promotion-banner__button"
           to={banner.href}
-          aria-label={`${banner.buttonLabel}: ${banner.title}`}
         >
           <span>{banner.buttonLabel}</span>
-          <ArrowIcon className="promotion-banner__button-icon" aria-hidden="true" />
+          <ArrowIcon className="promotion-banner__button-icon" />
         </Link>
       </div>
     </article>
@@ -89,7 +84,7 @@ function PromotionBanner({ banner }) {
 
 function PromotionBanners({ banners = promotionBanners }) {
   return (
-    <section className="promotion-banners" aria-label="Promotional offers">
+    <section className="promotion-banners">
       <div className="container">
         <div className="row g-4 justify-content-center">
           {banners.map((banner) => (

@@ -1,6 +1,6 @@
 import "./Footer.css";
 import { shoperyIcons } from "../../data/data";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 function Newslette() {
   const handleNewsletterSubmit = (event) => {
@@ -12,7 +12,6 @@ const LeafIcon = shoperyIcons.leaf;
   return (
     <section
       className="footer__newsletter"
-      aria-labelledby="footer-newsletter-title"
     >
       <div className="container">
         <div className="row align-items-center footer__newsletter-row">
@@ -20,7 +19,6 @@ const LeafIcon = shoperyIcons.leaf;
             <Link
               className="footer__brand d-inline-flex align-items-center"
               to="/"
-              aria-label="Shopery home page"
             >
               {/* <img
                 className="footer__brand-mark flex-shrink-0"
@@ -28,10 +26,9 @@ const LeafIcon = shoperyIcons.leaf;
                 alt=""
                 width="39"
                 height="36"
-                aria-hidden="true"
               />
               <span>Ecobazar</span> */}
-              <LeafIcon className="footer__brand-mark" aria-hidden="true" />
+              <LeafIcon className="footer__brand-mark" />
               <span className="">Shopery</span>
             </Link>
           </div>
@@ -53,9 +50,6 @@ const LeafIcon = shoperyIcons.leaf;
               className="footer__newsletter-form position-relative"
               onSubmit={handleNewsletterSubmit}
             >
-              <label className="visually-hidden" htmlFor="footer-email">
-                Email address
-              </label>
               <input
                 id="footer-email"
                 className="footer__newsletter-input"

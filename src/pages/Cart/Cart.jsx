@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Category_Product_Context } from "../../context/Context";
 import { shoperyIcons } from "../../data/data";
 import "./Cart.css";
@@ -64,7 +64,6 @@ function handleDiscountPercentage(d) {
     <main className="cart-page">
       <section
         className="cart-page__content container"
-        aria-labelledby="cart-page-title"
       >
         <h1 id="cart-page-title" className="cart-page__title text-center">
           My Shopping Cart
@@ -75,7 +74,6 @@ function handleDiscountPercentage(d) {
             <div className="cart-page__left-column d-flex flex-column gap-4">
               <section
                 className="cart-table-card"
-                aria-label="Shopping cart products"
               >
                 <div className="table-responsive">
                   <table className="cart-table w-100">
@@ -86,7 +84,6 @@ function handleDiscountPercentage(d) {
                         <th scope="col">Quantity</th>
                         <th scope="col">Subtotal</th>
                         <th scope="col">
-                          <span className="visually-hidden">Remove</span>
                         </th>
                       </tr>
                     </thead>
@@ -109,14 +106,13 @@ function handleDiscountPercentage(d) {
                           <td data-label="Quantity">
                             <div
                               className="cart-quantity d-inline-flex align-items-center justify-content-between"
-                              aria-label={`Quantity ${item.quantity}`}
                             >
                               <button
                                 onClick={() => {
                                   DecreaseQuantity(item);
                                 }}
                               >
-                                <MinusIcon aria-hidden="true" />
+                                <MinusIcon />
                               </button>
                               <span>{item.quantity}</span>
                               <button
@@ -124,7 +120,7 @@ function handleDiscountPercentage(d) {
                                   IncreaseQuantity(item);
                                 }}
                               >
-                                <PlusIcon aria-hidden="true" />
+                                <PlusIcon />
                               </button>
                             </div>
                           </td>
@@ -143,7 +139,7 @@ function handleDiscountPercentage(d) {
                                 RemoveProductFromCart(item);
                               }}
                             >
-                              <RemoveIcon aria-hidden="true" />
+                              <RemoveIcon />
                             </button>
                           </td>
                         </tr>
@@ -165,13 +161,9 @@ function handleDiscountPercentage(d) {
 
               <section
                 className="cart-coupon d-flex flex-column flex-md-row align-items-md-center gap-3 gap-xl-4"
-                aria-labelledby="cart-coupon-title"
               >
                 <h2 id="cart-coupon-title">Coupon Code</h2>
                 <div className="cart-coupon__field input-group flex-grow-1">
-                  <label className="visually-hidden" htmlFor="coupon-code">
-                    Coupon code
-                  </label>
                   <input
                     id="coupon-code"
                     className="form-control"
@@ -187,7 +179,6 @@ function handleDiscountPercentage(d) {
           <div className="col-12 col-lg-4">
             <aside
               className="cart-summary"
-              aria-labelledby="cart-summary-title"
             >
               <h2 id="cart-summary-title">Cart Total</h2>
               <dl className="cart-summary__list mb-0">

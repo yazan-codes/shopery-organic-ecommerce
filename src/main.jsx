@@ -6,7 +6,7 @@ import "./styles/base.css";
 import "./index.css";
 
 import App from "./App.jsx";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router";
 import Category_ProductContext from "./context/Category_ProductContext.jsx";
 import AuthProvider from "./context/AuthProvider.jsx";
 

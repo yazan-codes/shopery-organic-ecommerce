@@ -28,10 +28,10 @@ function Hero() {
   const ArrowRight = shoperyIcons.next;
 
   return (
-    <section className="hero" aria-labelledby="hero-title">
+    <section className="hero">
       <div className="container">
         <div className="hero__banner overflow-hidden">
-          <div className="hero__image" aria-hidden="true" />
+          <div className="hero__image" />
 
           <div className="row hero__content align-items-center">
             <div className="col-12 col-lg-7 col-xl-6">
@@ -49,24 +49,24 @@ function Hero() {
                 </p>
                 <a className="hero__cta" href="/shop">
                   Shop now
-                  <ArrowRight aria-hidden="true" />
+                  <ArrowRight />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="hero__dots" aria-label="Hero slides">
+          <div className="hero__dots">
             <span />
             <span className="is-active" />
             <span />
           </div>
         </div>
 
-        <div className="hero__features row g-0" aria-label="Shopery benefits">
+        <div className="hero__features row g-0">
           {featureItems.map(({ icon: Icon, title, description }) => (
             <div className="col-12 col-sm-6 col-lg-3" key={title}>
               <div className="hero__feature">
-                <Icon className="hero__feature-icon" aria-hidden="true" />
+                <Icon className="hero__feature-icon" />
                 <div>
                   <h2>{title}</h2>
                   <p>{description}</p>

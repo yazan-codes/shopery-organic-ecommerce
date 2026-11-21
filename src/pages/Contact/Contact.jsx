@@ -16,7 +16,6 @@ export default function Contact() {
           <div className="col-12 col-lg-3">
             <aside
               className="contact-info h-100"
-              aria-label="Contact information"
             >
               <address className="m-0">
                 {contactDetails.map((detail) => {
@@ -25,9 +24,8 @@ export default function Contact() {
                     <section
                       className="contact-info__item"
                       key={detail.id}
-                      aria-label={detail.label}
                     >
-                      <Icon aria-hidden="true" />
+                      <Icon />
                       <div>
                         {detail.lines.map((line) => (
                           <p key={line}>{line}</p>
@@ -42,7 +40,6 @@ export default function Contact() {
           <div className="col-12 col-lg-9">
             <section
               className="contact-form h-100"
-              aria-labelledby="contact-title"
             >
               <h1 id="contact-title">Just Say Hello!</h1>
               <p className="contact-form__intro">
@@ -100,7 +97,7 @@ export default function Contact() {
                   Send Message
                 </button>
                 {status && (
-                  <p className="shopery-form-status" role="status">
+                  <p className="shopery-form-status">
                     {status}
                   </p>
                 )}

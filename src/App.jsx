@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router";
 import Home from "./pages/Home/Home.jsx";
 import Shop from "./pages/Shop/Shop.jsx";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
@@ -15,6 +15,12 @@ import About from "./pages/About/About.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
+import AccountLayout from "./pages/my Account/AccountLayout/AccountLayout.jsx";
+import Orders from "./pages/my Account/Orders/Orders.jsx";
+import OrderDetails from "./pages/my Account/OrderDetails/OrderDetails.jsx";
+import Address from "./pages/my Account/Address/Address.jsx";
+import Notification from "./pages/my Account/Notification/Notification.jsx";
+import Setting from "./pages/my Account/Setting/Setting.jsx";
 
 function App() {
 
@@ -37,6 +43,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetails />} />
+        
         {/* <Route path="/my-wishlist" element={<Wishlist />} /> */}
         <Route path="/my-wishlist" element={<WishlistPage />} />
 
@@ -44,6 +51,16 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+        <Route path="/account/:id" element={<AccountLayout />}>
+          <Route index element={<Navigate to="orders" replace />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="orders/:orderId" element={<OrderDetails />} />
+
+          <Route path="address" element={<Address />} />
+          <Route path="notification" element={<Notification />} />
+          <Route path="setting" element={<Setting />} />
+        </Route>
       </Routes>
       <Footer />
     </>

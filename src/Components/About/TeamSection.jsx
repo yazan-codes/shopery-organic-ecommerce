@@ -27,7 +27,7 @@ export default function TeamSection() {
     });
   }
   return (
-    <section className="about-team" aria-labelledby="about-team-title">
+    <section className="about-team">
       <div className="container position-relative">
         <header className="about-team__heading text-center">
           <h2 id="about-team-title">Our Awesome Team</h2>
@@ -60,19 +60,15 @@ export default function TeamSection() {
             className="about-team__arrow about-team__arrow--previous"
             type="button"
             onClick={() => move(-1)}
-            aria-label="Previous team members"
-            aria-controls="about-team-members"
           >
-            <PreviousIcon aria-hidden="true" />
+            <PreviousIcon />
           </button>
           <button
             className="about-team__arrow about-team__arrow--next"
             type="button"
             onClick={() => move(1)}
-            aria-label="Next team members"
-            aria-controls="about-team-members"
           >
-            <NextIcon aria-hidden="true" />
+            <NextIcon />
           </button>
         </div>
       </div>

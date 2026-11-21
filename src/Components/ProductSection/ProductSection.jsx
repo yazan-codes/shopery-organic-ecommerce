@@ -7,7 +7,7 @@ function ProductSection({title,products}) {
     .replace(/(^-|-$)/g, "")}`;
 
   return (
-    <section className="product-section" aria-labelledby={sectionId}>
+    <section className="product-section">
       <div className="product-section__column">
         <h2 id={sectionId} className="product-section__title">
           {title}

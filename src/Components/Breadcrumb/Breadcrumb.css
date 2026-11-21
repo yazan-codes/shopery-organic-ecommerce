@@ -14,5 +14,5 @@
 .page-breadcrumb ol { margin-bottom: 0; }
 .page-breadcrumb svg { width: var(--space-5); height: var(--space-5); flex-shrink: 0; }
 .page-breadcrumb li > svg { width: var(--space-3); height: var(--space-3); }
-.page-breadcrumb [aria-current="page"], .page-breadcrumb a:hover { color: var(--color-primary); }
+.page-breadcrumb [data-current="page"], .page-breadcrumb a:hover { color: var(--color-primary); }
 .page-breadcrumb a:focus-visible { outline: 2px solid var(--color-primary-soft); outline-offset: var(--space-1); }

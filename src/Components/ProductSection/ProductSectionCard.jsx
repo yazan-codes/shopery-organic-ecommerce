@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { shoperyIcons } from "../../data/data";
 import "./ProductSection.css";
 
@@ -37,7 +37,6 @@ function ProductSectionCard({
             <p className="product-section-card__price">{formatPrice(price)}</p>
             <div
               className="product-section-card__rating d-flex align-items-center"
-              aria-label={`Rating ${rating} out of 5`}
             >
               {Array.from({ length: 5 }, (_, index) => (
                 <RatingIcon
@@ -45,7 +44,6 @@ function ProductSectionCard({
                   className={
                     index < Math.floor(rating) ? "is-filled" : "is-empty"
                   }
-                  aria-hidden="true"
                 />
               ))}
             </div>
@@ -55,26 +53,23 @@ function ProductSectionCard({
             <button
               className="product-section-card__action product-section-card__action--cart"
               type="button"
-              aria-label={`Add ${title} to cart`}
             >
               {/* onClick wiring will be added with cart state. */}
-              <CartIcon aria-hidden="true" />
+              <CartIcon />
             </button>
             <button
               className="product-section-card__action"
               type="button"
-              aria-label={`Quick view ${title}`}
             >
               {/* Quick-view wiring will be added with product details state. */}
-              <QuickViewIcon aria-hidden="true" />
+              <QuickViewIcon />
             </button>
             <button
               className="product-section-card__action"
               type="button"
-              aria-label={`Add ${title} to wishlist`}
             >
               {/* Wishlist wiring will be added with wishlist state. */}
-              <WishlistIcon aria-hidden="true" />
+              <WishlistIcon />
             </button>
           </div>
         </div>

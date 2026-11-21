@@ -2,20 +2,30 @@
   "users": [
     {
       "id": "1",
-      "name": "Ahmad",
-      "email": "ahmad@example.test",
-      "password": "123456"
-    },
-    {
-      "id": "2",
-      "name": "yazan",
-      "email": "yazan@example.test",
-      "password": "67890"
+      "firstName": "ahmed",
+      "lastName": "Alnawaiseh",
+      "email": "ahmed@example.test",
+      "phone": "",
+      "notificationSettings": {
+        "orderUpdates": false,
+        "deliveryUpdates": false,
+        "emailOffers": false,
+        "smsUpdates": false
+      },
+      "password": "1234"
     },
     {
       "id": "LGKZHq0FXUI",
-      "name": "hassan",
-      "email": "hassan@example.test",
+      "firstName": "hassan",
+      "lastName": "Alnawaiseh",
+      "email": "hassna@example.test",
+      "phone": "0592772198",
+      "notificationSettings": {
+        "orderUpdates": false,
+        "deliveryUpdates": false,
+        "emailOffers": false,
+        "smsUpdates": false
+      },
       "password": "123"
     }
   ],
@@ -1562,5 +1572,39 @@
       "image": "/images/personal-care-products.png"
     }
   ],
+  "addresses": [
+    {
+      "label": "UI Test Home",
+      "firstName": "Test",
+      "lastName": "Customer",
+      "company": "",
+      "street": "12 Example Street",
+      "city": "Hebron",
+      "zipCode": "",
+      "email": "test@example.test",
+      "phone": "000-000-0000",
+      "country": "Palestine",
+      "state": "Gaza",
+      "userId": "1",
+      "id": "gyWtuKu0rVI"
+    },
+    {
+      "label": "UI Test Home",
+      "firstName": "Test",
+      "lastName": "Customer",
+      "company": "",
+      "street": "12 Example Street",
+      "city": "Hebron",
+      "zipCode": "",
+      "email": "test@example.test",
+      "phone": "000-000-0000",
+      "country": "United States",
+      "state": "California",
+      "userId": "1",
+      "id": "l6u_dWPl6a8"
+    }
+  ],
+  "orders": [],
+  "paymentMethods": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

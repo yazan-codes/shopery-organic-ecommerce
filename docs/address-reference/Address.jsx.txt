@@ -1,0 +1,176 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import AddressForm from "./AddressForm";
+import "./Address.css";
+
+// Development JSON Server; filtering by userId is not server authorization.
+const API_URL = "http://localhost:3000";
+
+async function request(path, options = {}) {
+  const response = await fetch(`${API_URL}${path}`, options);
+  if (!response.ok) throw new Error(`Request failed (${response.status})`);
+  const body = await response.text();
+  return body ? JSON.parse(body) : null;
+}
+
+function Address() {
+  const { id } = useParams();
+  return <AddressBook key={id} userId={id} />;
+}
+
+function AddressBook({ userId }) {
+  const [addresses, setAddresses] = useState([]);
+  const [defaultAddressId, setDefaultAddressId] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
+  const [retry, setRetry] = useState(0);
+  const [editor, setEditor] = useState(null);
+  const [deleteId, setDeleteId] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const controller = new AbortController();
+    Promise.all([
+      request(`/addresses?${new URLSearchParams({ _where: JSON.stringify({ userId: { eq: userId } }) })}`, { signal: controller.signal }),
+      request(`/users/${encodeURIComponent(userId)}`, { signal: controller.signal }),
+    ]).then(([items, user]) => {
+      if (!Array.isArray(items)) throw new Error("Invalid addresses response");
+      if (controller.signal.aborted) return;
+      setAddresses(items);
+      setDefaultAddressId(user.defaultAddressId ?? null);
+      setLoadError("");
+      setLoading(false);
+    }).catch((failure) => {
+      if (controller.signal.aborted) return;
+      setLoadError("We could not load your addresses. Check that JSON Server is running and try again.");
+      setLoading(false);
+      // Keep network failures in the page instead of interrupting navigation.
+      console.debug(failure.message);
+    });
+    return () => controller.abort();
+  }, [userId, retry]);
+
+  function openForm(address = {}) {
+    setEditor(address);
+    setDeleteId(null);
+    setError("");
+    setMessage("");
+  }
+
+  async function saveAddress(fields) {
+    if (busy) return;
+    setBusy(true);
+    setError("");
+    try {
+      const editing = editor.id !== undefined;
+      const saved = await request(editing ? `/addresses/${encodeURIComponent(editor.id)}` : "/addresses", {
+        method: editing ? "PATCH" : "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...fields, userId }),
+      });
+      setAddresses((current) => editing
+        ? current.map((address) => address.id === saved.id ? saved : address)
+        : [...current, saved]);
+      setEditor(null);
+      setMessage(editing ? "Address updated." : "Address saved.");
+    } catch {
+      setError("We could not save the address. Your entries are still here; please try again.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function persistDefault(addressId) {
+    await request(`/users/${encodeURIComponent(userId)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ defaultAddressId: addressId }),
+    });
+    setDefaultAddressId(addressId);
+  }
+
+  async function makeDefault(addressId) {
+    if (busy) return;
+    setBusy(true);
+    setError("");
+    setMessage("");
+    try {
+      await persistDefault(addressId);
+      setMessage("Default address updated.");
+    } catch {
+      setError("We could not change the default address. Please try again.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function removeAddress(addressId) {
+    if (busy) return;
+    setBusy(true);
+    setError("");
+    setMessage("");
+    try {
+      if (addressId === defaultAddressId) await persistDefault(null);
+      await request(`/addresses/${encodeURIComponent(addressId)}`, { method: "DELETE" });
+      setAddresses((current) => current.filter((address) => address.id !== addressId));
+      setDeleteId(null);
+      setMessage("Address deleted.");
+    } catch {
+      setError("We could not delete the address. Please try again.");
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <section className="account-address w-100">
+      <div className="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+        <h1 className="account-address__title">Address</h1>
+        <button className="account-address__button" type="button" disabled={loading || Boolean(loadError) || busy} onClick={() => openForm()}>
+          + Add a new address
+        </button>
+      </div>
+      {loading && <p>Loading your addresses...</p>}
+      {loadError && <div className="account-address__empty p-4"><p className="mb-3">{loadError}</p><button className="account-address__button" type="button" onClick={() => { setLoading(true); setRetry((value) => value + 1); }}>Try again</button></div>}
+      {message && <p className="account-address__success mb-3">{message}</p>}
+      {error && !editor && <p className="account-address__error mb-3">{error}</p>}
+      {!loading && !loadError && addresses.length === 0 && (
+        <div className="account-address__empty text-center p-4 p-md-5">
+          <h2 className="account-address__empty-title mb-2">No saved addresses yet</h2>
+          <p>Add your home or work address for future orders.</p>
+        </div>
+      )}
+      <div className="row g-3">
+        {addresses.map((address) => (
+          <div className="col-12 col-md-6" key={address.id}>
+            <article className="account-address__card h-100 p-4 d-flex flex-column">
+              <h2 className="account-address__card-title mb-3">{address.label}</h2>
+              <p className="account-address__name mb-2">{address.firstName} {address.lastName}</p>
+              {address.company && <p>{address.company}</p>}
+              <p>{address.street}</p>
+              <p>{address.city}, {address.state} {address.zipCode}</p>
+              <p className="mb-2">{address.country}</p>
+              <p>{address.phone}</p>
+              <p className="text-break mb-3">{address.email}</p>
+              <div className="mt-auto">
+                {defaultAddressId === address.id
+                  ? <span className="account-address__default d-inline-block mb-3">Default address</span>
+                  : <button className="account-address__button mb-3" type="button" disabled={busy} onClick={() => makeDefault(address.id)}>Set as Default</button>}
+                <div className="d-flex gap-3">
+                  <button className="account-address__text-button" type="button" disabled={busy} onClick={() => openForm(address)}>Edit</button>
+                  <button className="account-address__text-button account-address__error" type="button" disabled={busy} onClick={() => { setDeleteId(address.id); setError(""); setMessage(""); }}>Delete</button>
+                </div>
+                {deleteId === address.id && <div className="account-address__confirm mt-3 pt-3"><p className="mb-2">Delete this saved address?</p><div className="d-flex gap-3"><button className="account-address__text-button account-address__error" type="button" disabled={busy} onClick={() => removeAddress(address.id)}>{busy ? "Deleting..." : "Yes, delete"}</button><button className="account-address__text-button" type="button" disabled={busy} onClick={() => setDeleteId(null)}>Cancel</button></div></div>}
+              </div>
+            </article>
+          </div>
+        ))}
+      </div>
+      {editor && <AddressForm address={editor} busy={busy} error={error} onSave={saveAddress} onCancel={() => { setEditor(null); setError(""); }} />}
+    </section>
+  );
+}
+
+export default Address

@@ -1,0 +1,96 @@
+.account-sidebar {
+  max-width: var(--account-sidebar-width);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-light);
+  /* border-right: 1px solid var(--color-border-light); */
+  font-size: var(--font-size-sm);
+}
+
+.account-sidebar__item {
+  min-height: var(--space-12);
+  padding: var(--space-3) var(--space-4);
+  color: inherit;
+  background-color: transparent;
+  border-radius: var(--radius-md);
+  line-height: var(--line-height-body);
+}
+
+.account-sidebar__item:hover {
+  color: var(--color-text-strong);
+  background-color: var(--color-bg-muted);
+}
+
+.account-sidebar__item--active,
+.account-sidebar__item--active:hover {
+  color: var(--color-primary-hover);
+  background-color: var(--color-bg-soft-green);
+  box-shadow: inset var(--space-1) 0 0 var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.account-sidebar__item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: var(--space-1);
+}
+
+.account-sidebar__icon {
+  width: var(--space-5);
+  height: var(--space-5);
+}
+
+.account-sidebar__item--disabled,
+.account-sidebar__item--disabled:hover {
+  color: var(--color-text-disabled);
+  background-color: transparent;
+  cursor: default;
+}
+
+.account-sidebar__logout {
+  border-top: 1px solid var(--color-border-light);
+}
+
+.account-sidebar__drawer {
+  --bs-offcanvas-width: min(100%, var(--account-sidebar-width));
+  --bs-offcanvas-bg: var(--color-bg-page);
+  --bs-offcanvas-border-color: var(--color-border-light);
+  --bs-offcanvas-padding-x: var(--space-4);
+  --bs-offcanvas-padding-y: var(--space-4);
+}
+
+.account-sidebar__toggle,
+.account-sidebar__close {
+  min-height: var(--button-height-sm);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-strong);
+  background-color: var(--color-bg-page);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.account-sidebar__close {
+  width: var(--button-height-sm);
+  padding: var(--space-2);
+}
+
+.account-sidebar__title {
+  font-size: var(--font-size-xl);
+}
+
+.account-sidebar__toggle:hover,
+.account-sidebar__close:hover {
+  color: var(--color-primary);
+  border-color: var(--color-border-primary);
+}
+
+.account-sidebar__toggle:focus-visible,
+.account-sidebar__close:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: var(--space-1);
+}
+
+@media (min-width: 992px) {
+  .account-sidebar-shell {
+    width: var(--account-sidebar-width);
+  }
+}

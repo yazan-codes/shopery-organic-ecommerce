@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router";
 import { shoperyIcons } from "../../data/data";
 import { primaryEmail, primaryPhone } from "../../data/contactData";
 import "./Footer.css";
@@ -125,7 +125,6 @@ const SecureCheckoutIcon = shoperyIcons.secureCheckout;
           <div className="row footer__columns">
             <section
               className="footer__about col-12 col-lg-4 col-xl-3"
-              aria-labelledby="footer-about-title"
             >
               <h2 id="footer-about-title" className="footer__heading">
                 About Shopery
@@ -150,7 +149,6 @@ const SecureCheckoutIcon = shoperyIcons.secureCheckout;
                 <nav
                   key={group.title}
                   className="footer__link-group col-6 col-sm-4 col-lg-2 col-xl"
-                  aria-labelledby={titleId}
                 >
                   <h2 id={titleId} className="footer__heading">
                     {group.title}
@@ -175,14 +173,12 @@ const SecureCheckoutIcon = shoperyIcons.secureCheckout;
 
             <section
               className="footer__download col-12 col-lg-6 col-xl-3"
-              aria-labelledby="footer-download-title"
             >
               <h2 id="footer-download-title" className="footer__heading">
                 Download our Mobile App
               </h2>
               <ul
                 className="footer__app-list d-flex flex-column flex-sm-row"
-                aria-label="Mobile applications"
               >
                 {appBadges.map((app) => (
                   <li
@@ -193,7 +189,6 @@ const SecureCheckoutIcon = shoperyIcons.secureCheckout;
                       className="footer__app-icon flex-shrink-0"
                       src={app.icon}
                       alt=""
-                      aria-hidden="true"
                     />
                     <span className="footer__app-copy d-grid">
                       <span className="footer__app-eyebrow">{app.eyebrow}</span>
@@ -209,7 +204,6 @@ const SecureCheckoutIcon = shoperyIcons.secureCheckout;
             <div className="col-12 col-md-6 col-lg-3">
               <ul
                 className="footer__social-list d-flex align-items-center justify-content-center justify-content-md-start"
-                aria-label="Social media"
               >
                 {socialItems.map((social) => {
                   const SocialIcon = social.icon;
@@ -220,10 +214,8 @@ const SecureCheckoutIcon = shoperyIcons.secureCheckout;
                         className={`footer__social-item d-inline-flex align-items-center justify-content-center${
                           social.isFeatured ? " is-featured" : ""
                         }`}
-                        aria-label={social.name}
-                        role="img"
                       >
-                        <SocialIcon aria-hidden="true" />
+                        <SocialIcon />
                       </span>
                     </li>
                   );
@@ -239,19 +231,16 @@ const SecureCheckoutIcon = shoperyIcons.secureCheckout;
 
             <ul
               className="footer__payment-list col-12 col-md-6 col-lg-4 d-flex align-items-center justify-content-center justify-content-md-end"
-              aria-label="Payment methods"
             >
               {paymentMethods.map((payment) => (
                 <li
                   key={payment.name}
                   className="footer__payment-card d-inline-flex align-items-center justify-content-center overflow-hidden"
                   title={payment.name}
-                  aria-label={payment.pieces ? payment.name : undefined}
                 >
                   {payment.pieces ? (
                     <span
                       className={`footer__payment-composite position-relative d-block flex-shrink-0 ${payment.className}`}
-                      aria-hidden="true"
                     >
                       {payment.pieces.map((piece) => (
                         <img
@@ -273,9 +262,8 @@ const SecureCheckoutIcon = shoperyIcons.secureCheckout;
               ))}
               <li
                 className="footer__payment-card footer__payment-card--secure d-inline-flex align-items-center justify-content-center overflow-hidden"
-                aria-label="Secure payment"
               >
-                <SecureCheckoutIcon aria-hidden="true" />
+                <SecureCheckoutIcon />
                 <span className="d-grid">
                   <span>Secure</span>
                   <strong>Payment</strong>
